@@ -1,8 +1,8 @@
 """
-This program calculates the lenght of string without string's buitt-in funnction len()
-Input - Takes a strings
-Execution: In the start assume string length is 0 and a for loop iterets charactor one by one and for one iteretion 1 increase in string length.
-Output: Gives strings total lenth in integer.
+A program that calculates the lenght of string without using Python's buitt-in len() function.
+Input - A standard string.
+Execution: Initializes a counter variable to 0. A for loop iterates through the string character by character, incrementing the counter by 1 for every iteration.
+Output: Returns the total length of the string as an integer.
 """
 
 string = 'Lokendra Kushwaha'

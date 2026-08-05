@@ -4,7 +4,10 @@
 
 print("Lokendra Kushwaha is Great.")
 
-# Calculation on two numbers using arithmetic operators
+#==================================================================================================
+#                          Calculation on two numbers using arithmetic operators
+#==================================================================================================
+
 x = 10
 y = 6
 print(x, "+", y, "=", x + y)
@@ -13,6 +16,40 @@ print(x, "x", y, "=", x * y)
 print(x, "/", y, "=", x / y)
 print(x, "//", y, "=", x // y, "(Floor Division)")
 print(x, "%", y, "=", x % y, "(Modulus)")
+
+#==================================================================================================
+# Calculation on two numbers using arithmetic operators and also changing numbers to in string datatype.
+#==================================================================================================
+
+n1 = int(input("Enter Your First No. : "))
+n2 = int(input("Enter Your Second No. : "))
+x = input("For the Sum of First Number and Second Number Enter + : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1+n2)
+
+x = input("For the Substraction of First Number and Second Number Enter - : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1-n2)
+
+x = input("For the Multiplication of First Number and Second Number Enter x : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1*n2)
+
+x = input("For the Divide of First Number and Second Number Enter / : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1/n2)
+
+x = input("For the Exponential of First Number and Second Number Enter ^ : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1**n2)
+
+x = input("For the Module of First Number and Second Number Enter % : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1%n2)
+
+x = input("For the Floor Division of First Number and Second Number Enter // : ")
+print("The String of", n1, "and", n2, "is", str(n1)+str(n2))
+print("The Sum of", n1, "and", n2, "is", n1//n2)
 
 #==================================================================================================
 #                               Good Morning Sir (Exercise)
@@ -54,6 +91,32 @@ elif(12 <= timestamp <= 16):
     print("Good Afternoon,", name.title())
 elif(16 < timestamp <= 24):
     print("Good Evening,", name.title())
+
+
+#==================================================================================================
+#                                   for loop Practice   
+#==================================================================================================
+
+name = "Lokendra Kushwaha"
+
+for char in name:
+    print(char)
+    if(char == "L"):
+        print("Hey, How Are You!")
+#-------------------------------------------------------------
+for count in range(6,19,4):
+    print(count)
+#-------------------------------------------------------------
+colors = ["Yellow", "Puple", "Red", "Green"]
+
+for color in colors:
+    print(color)
+
+    for i in color:
+        print(i)
+#-------------------------------------------------------------
+for k in range(20000):
+    print(k)
 
 #==================================================================================================
 #                            Armstrong Number Finder in a Range    

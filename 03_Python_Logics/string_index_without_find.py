@@ -1,19 +1,39 @@
-"""
-A program that decodes Python's built-in find() function for strings.
-Input: A target character that the user wants to locate within a string.
-Execution: Uses a for loop with enumerate() to iterate through the string and its indices. It checks each charcter against the target and breaks the loop immediately upon finding the match to ensure O(N) time complexity.
-Output: Prints the index position (integer) of the first occurence of the target character.
-"""
-string = 'lokendra'
-find_index = 'r'
+def find_character(string, target):
+    """
+    Decodes Python's built-in find() function for strings.
 
-for index, char in enumerate(string):
-    if char == find_index:
-        print(index)
-        break
+    Logic:
+        Uses a for loop with enumerate() to iterate through the string and its indices. 
+        It checks each character against the target and immediately returns the index 
+        upon finding the first match, ensuring O(N) time complexity.
+
+    Args:
+        string (str): The main string to be searched.
+        target (str): The target character that the user wants to locate.
+
+    Returns:
+        int: The index position of the first occurrence of the target character. 
+             Returns -1 if the character is not found.
+    """
+    for index, char in enumerate(string):
+        if char == target:
+            return index
+
+    return -1
+
+if __name__ == "__main__":
+    # Testing find_character function
+    text1 = 'lokendra'
+    search_char = 'r'
+    print(f"Index of '{search_char}' in '{text1}':", find_character(text1, search_char))
+
+
+
+string = 'lokendra'
+target = 'r'
 
 # Another method ------------------->
 for i in range(len(string)):
-    if string[i] == find_index:
+    if string[i] == target:
         print(i)
         break

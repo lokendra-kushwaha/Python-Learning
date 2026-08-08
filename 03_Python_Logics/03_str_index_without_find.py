@@ -27,13 +27,23 @@ if __name__ == "__main__":
     search_char = 'r'
     print(f"Index of '{search_char}' in '{text1}':", find_character(text1, search_char))
 
-
-
-string = 'lokendra'
-target = 'r'
+    
 
 # Another method ------------------->
+string = 'lokendra'
+target = 'r'
 for i in range(len(string)):
     if string[i] == target:
         print(i)
         break
+
+# Another method ------------------->
+def findChar(str, target_char):
+    for char in str:
+        if target_char == char:
+            return str.index(char)
+        else:
+            return -1
+
+str = "lokendra"
+print(findChar(str, 'l'))

@@ -2,7 +2,7 @@
 
 Welcome to my central Python repository! This is a **living, breathing workspace** where I document my ongoing journey as a programmer. 
 
-I wrote my first line of Python on **June 25, 2026**, and by the time of my first GitHub commit, I had already written over **10,000 lines of code**! 🚀 This repository is constantly evolving as I explore new concepts, solve complex problems, and build custom software.
+I wrote my first line of Python on **June 25, 2026**! 🚀 This repository is constantly evolving as I explore new concepts, solve complex problems, and build custom software.
 
 ## 📂 Repository Structure
 

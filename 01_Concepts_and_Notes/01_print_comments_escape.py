@@ -1,23 +1,46 @@
-#==================================================================================================
-#           Day - 1 : Print Statements, Comments & Escape Sequences
-#==================================================================================================
+"""
+=============================================================================
+Day 1: Print Statements, Comments & Escape Sequences
+=============================================================================
+This module covers the absolute basics of Python: displaying output, 
+writing code comments, and handling special string characters.
+"""
 
-# <--- About Print --->
-# For print a datatype like Integer, float or String in console we use python's in-bulit function that is 'Print()'.
+# ---------------------------------------------------------
+# 1. THE PRINT FUNCTION
+# ---------------------------------------------------------
+# print() is a built-in Python function used to display data (strings, ints, etc.) on the console.
 
-print("Lokendra Kushwaha", end=' ') # end parameter: Romoves default \n character after print.
-print("is Male")
+# Using the 'end' parameter:
+# By default, print() adds a new line (\n) at the end. 
+# 'end' replaces that new line with a custom character (like a space).
+print("Lokendra Kushwaha", end=' ') 
+print("is Male")  # Output: Lokendra Kushwaha is Male
 
-print('I', 'am', 'a', 'developer.', sep='*') # sep parameter: Defines the character between multiple argumets which is space by default.
+# Using the 'sep' parameter:
+# By default, multiple arguments in print() are separated by a space.
+# 'sep' allows us to define a custom separator (like '*').
+print('I', 'am', 'a', 'developer.', sep='*') 
+# Output: I*am*a*developer.
 
-# <--- Comments --->
-# Piece of code and ignored by python interpreter.
 
-# This is my first program --> Commented line
-print("Hello World!")
+# ---------------------------------------------------------
+# 2. COMMENTS
+# ---------------------------------------------------------
+# Comments are notes written for developers. The Python interpreter completely ignores them.
 
-# <--- Escape Sequences --->
+# This is a single-line comment.
+print("Hello World!") # This prints a greeting.
 
-print("He said, \"I want to eat.\"") # Or
-print('He said, "I want to eat."')
+
+# ---------------------------------------------------------
+# 3. ESCAPE SEQUENCES
+# ---------------------------------------------------------
+# Escape characters (starting with \) are used to insert characters that are otherwise illegal in a string.
+
+# To print double quotes inside a string, use \" or wrap the string in single quotes.
+print("He said, \"I want to eat.\"")  
+print('He said, "I want to eat."')    
+
+# Using \n for a new line within the same string:
 print("He is a \"good boy\" \nand she is also a \"good girl.\"")

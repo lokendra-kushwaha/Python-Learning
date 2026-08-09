@@ -1,25 +1,39 @@
-#==================================================================================================
-#                              Day - 2 : Datatypes And Variables
-#==================================================================================================
+"""
+=============================================================================
+Day 2: Datatypes and Variables
+=============================================================================
+This module covers fundamental Python concepts including built-in data types, 
+variables, dynamic typing vs. binding, keywords, identifiers, user input, 
+and type conversion.
+"""
 
-# <--- Data type --->
+# ---------------------------------------------------------
+# 1. CORE DATA TYPES
+# ---------------------------------------------------------
+# Python supports multiple built-in data types for handling numbers, text, and collections.
 
-print(1e308) # Max integer number that can handeled by python interpreter
-print(1.7e308) # Max float number that can handeled by python interpreter
-print(True) # Boolean datatype
-print(False) # Boolean datatype
-print("lokendra") # String datatype
-print(5+6j) # A complex number
+# Numeric and Boolean types
+print(1e308)     # Maximum integer/float magnitude handled cleanly before overflow
+print(1.7e308)   # Floating-point upper limit approximation in standard Python builds
+print(True)      # Boolean True (subclass of integer 1)
+print(False)     # Boolean False (subclass of integer 0)
+print("lokendra")# String datatype for handling text
+print(5 + 6j)    # Complex number datatype (real + imaginary part)
 
-# Python -> List -> C -> Array
-print([1, 2, 3]) # (In C language python's list called Arrey)
-print((1, 2, 3)) # Tuple
-print({1, 2, 3}) # Set datatype
-print({1:2, 3:4}) # Dictionary datatype
+# Collection types
+print([1, 2, 3]) # List: Ordered, mutable collection (backed by array structures in CPython)
+print((1, 2, 3)) # Tuple: Ordered, immutable collection
+print({1, 2, 3}) # Set: Unordered collection of unique items
+print({1: 2, 3: 4})# Dictionary: Key-value pair mapping structure
 
-print(type(3)) # We can check any item's datatype by using python's in-built function called type()
+# Checking the type of an object using the built-in type() function
+print(type(3))   # Output: <class 'int'>
 
-# <--- Variables ---> Variables are the containers for future use.
+
+# ---------------------------------------------------------
+# 2. VARIABLES, DYNAMIC TYPING & DYNAMIC BINDING
+# ---------------------------------------------------------
+# Variables are symbolic containers used to store data values for future reference.
 name = 'nitesh'
 print(name)
 
@@ -27,80 +41,75 @@ a = 5
 b = 6
 print(a + b)
 
-# Dynamic typing
-a = 5 # Where you do not tell datatype to variable called dynamic typing.
+# Dynamic Typing:
+# Python does not require explicit declaration of a variable's data type 
+# prior to assignment (unlike static typing in C/Java like 'int a = 5;').
+a = 5 
 
-# Static typing 
-# int a = 5 # In C variable decalres such as and also Java supports stating typing.
-
-# Dynamic Binding
+# Dynamic Binding:
+# A variable name can reference objects of different data types at different times 
+# during execution, unlike static binding found in languages like C++ or Java.
 a = 5
 print(a)
 
-a = 'nitesh'
+a = 'nitesh' # Re-binding the same variable name to a string object
 print(a)
 
-# Static binding --> Used in C and C++ and Java
-# int a = 5 # Now in all programm a can olny store int datatype.
-
-#------------------
+# Multiple variable assignments in a single line
 a = 1
 b = 2
 c = 3
 print(a, b, c)
 
-a, b, c = 1, 2, 3
+a, b, c = 1, 2, 3  # Packed assignment
 print(a, b, c)
 
-a = b = c = 5
+a = b = c = 5      # Chained assignment
 print(a, b, c)
-#-------------------
 
-# <--- Keywords and Identifiers --->
 
-# Keywords --> In python 32 keywords exists
-# ex. if, else, elif, return, True, False, yield etc.
+# ---------------------------------------------------------
+# 3. KEYWORDS AND IDENTIFIERS
+# ---------------------------------------------------------
+# Keywords: Reserved words in Python that have special meaning (e.g., if, else, return).
+# Execution Model: Python is an interpreted language (code executed line-by-line via interpreter) 
+# unlike C or Java which use compilers to translate the entire code into low-level machine code at once.
 
-# Compiler --> pure code ko ak sath low level language me convert krta h ex. c, java
-# Interpreted --> line by line code ko low level language me convert krta h ex. python, javascript
+# Identifiers (Naming rules):
+# Rule 1: Cannot start with a digit.
+# 1name = 'nitesh'  # SyntaxError
+name1 = 'nitesh'    # Valid
 
-# Identifiers -->
-# 1. You can not start with a digit
+# Rule 2: Special characters are not allowed except for the underscore ('_').
+# first-name = 'lokendra'  # SyntaxError due to hyphen
+first_name = 'lokendra'    # Valid
 
-# 1name = 'nitesh' # Throws an error
-name1 = 'nitesh' # Would work
-
-# 2. You can use specials character only '_' others not allowed ex. %, $
-
-# first-name = 'lokendra' # throws an error
-first_name = 'lokendra' # Would work
-
-_ = 'lokendra'
+_ = 'lokendra'             # Underscore alone is a valid identifier
 print(_)
 
-# 3. Identifiers can not be keywords.
+# Rule 3: Identifiers cannot share names with Python keywords.
 
-# User Input -->
 
-# Static software -> jo user se bat nhi krte ex. calender, clock, blog, college website.
-# Dynamic software -> jo user se bat krte h ex. youtube, zomato etc.
+# ---------------------------------------------------------
+# 4. USER INPUT & TYPE CONVERSION
+# ---------------------------------------------------------
+# Dynamic software interacts interactively with users (e.g., input collection).
 
-# Take input from users and store them in a variable.
-fnum = input("Enter first number ")
+# input() function always returns user input as a string data type.
+fnum = input("Enter first number: ")
 snum = input("Enter second number: ")
-# Add the 2 variables
+
+# Explicit type conversion using int() to parse strings into integers for arithmetic addition
 add = int(fnum) + int(snum)
-# Print the result
-print(add)
-print(type(fnum)) # Python's type conversion operation does not changes the original data it's create a new value
+print("Sum:", add)
+print("Type of fnum input:", type(fnum)) 
+# Note: Type conversion functions create a brand-new converted value in memory; 
+# they do not mutate the original variable's type directly.
 
-# Type Conversion -->
-
-# Two types.- 1. Implicit 2. Explicit
-
-print(5 + 5.6) # Implicite type conversion (It is done by python interpreter.)
+# Type Conversion Types:
+# 1. Implicit Conversion: Handled automatically by the Python interpreter.
+print(5 + 5.6)                     # Integer 5 is implicitly promoted to float (5.0)
 print(type(5), type(5.6))
 
-print(4 + '4') # Explicit type --> In python there are built in functions for type conversion.
-
-print(int('4'))
+# 2. Explicit Conversion (Type Casting): Done manually using built-in functions like int(), float(), str().
+print(int('4'))                    # Converts string '4' explicitly to integer 4

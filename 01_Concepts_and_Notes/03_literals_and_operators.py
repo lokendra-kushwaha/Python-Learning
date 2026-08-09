@@ -1,130 +1,124 @@
-#==================================================================================================
-#                              Day - 3 : Literals
-#==================================================================================================
+"""
+=============================================================================
+Day 3: Literals and Operators
+=============================================================================
+This module covers literals (the actual data values stored in variables), 
+all major Python operators, and a practical digit-sum algorithm.
+"""
 
-# <--- Literals --->
-# The value stored in variable called literals.
+# ---------------------------------------------------------
+# 1. LITERALS
+# ---------------------------------------------------------
+# A literal is the raw data assigned to a variable.
 
-# 1. Interger Literals -->
-a = 0b1010 # Binary Literals 
-# a --> Variable , = --> Operator, 0b1010 -- > Literal
-b = 100 # Decimal Literal
-c = 0o310 # Octal Literal
-d = 0x12c # Hexadecimal Literal
-print(a, b, c, d)
+# --- Numeric Literals ---
+a = 0b1010       # Binary Literal (Prefix: 0b)
+b = 100          # Decimal Literal
+c = 0o310        # Octal Literal (Prefix: 0o)
+d = 0x12c        # Hexadecimal Literal (Prefix: 0x)
+print("Numeric Literals:", a, b, c, d)
 
-# 2. Float Literals
+# --- Float Literals ---
 float_1 = 10.5
-float_2 = 1.5e2
-float_3 = 1.5e-3
-print(float_1, float_2, float_3)
+float_2 = 1.5e2  # Scientific notation (1.5 * 10^2 = 150.0)
+float_3 = 1.5e-3 # Scientific notation (1.5 * 10^-3 = 0.0015)
+print("Float Literals:", float_1, float_2, float_3)
 
-# 3. Complex Literals
-x = 3 + 3.14j
-print(x, x.imag, x.real)
+# --- Complex Literals ---
+x = 3 + 3.14j    # Real part = 3.0, Imaginary part = 3.14
+print("Complex Literals:", x, "| Imaginary:", x.imag, "| Real:", x.real)
 
-# 4. Strings
-strings = 'This is Python' # String in single quote also valid .
-strings = "This is Python" # String in double quote also valid.
-char = 'C' # Single character also valid
+# --- String Literals ---
+string_sq = 'This is Python'          # Single quotes
+string_dq = "This is Python"          # Double quotes
+char = 'C'                            # Single character
 multiline_str = """The 
-Lokendra""" # Multiline string written in triple inverted commas.
+Lokendra"""                           # Triple quotes for multiline strings
+unicode_str = u"\U0001f600\U0001F606" # Unicode (Emojis)
+raw_str = r"raw \n string"            # Raw string (ignores escape sequences like \n)
+print("Strings:", string_sq, char, unicode_str, raw_str)
 
-unicode = u"\U0001f600\U0001F606\U0001F923"
-raw_srt = r"raw \n string"
-print(strings, strings, char, unicode, multiline_str, raw_srt)
+# --- Boolean Literals ---
+# In Python, True behaves like integer 1, and False behaves like integer 0 in math.
+bool_1 = True + 4   # 1 + 4 = 5
+bool_2 = False + 10 # 0 + 10 = 10
+print("Boolean Math:", bool_1, bool_2)
 
-a = True + 4 # Bollen data type treated by python as 0 or 1.
-b = False + 10
-print(a, b)
-
+# --- Special Literal (None) ---
+# Used to define a variable whose value will be assigned later.
 a = None
-print(a)
-
-# k # throws an error # We can'not write a varible name without literal.
 b = 6
-c = 4
-print(a+b)
-# For solve this problem
+# print(a + b)  # This would throw a TypeError because you can't add None to an integer.
 
-a = None # Now we can define this variable leter.
-b = 4
-c = 5
-print(b + c)
+# Correct way to use it:
+a = None  # Placeholder
+a = 4     # Value assigned later
+b = 5
+print("None usage result:", a + b)
 
-# <--- Operators --->
 
-# Operators in Python -->
+# ---------------------------------------------------------
+# 2. OPERATORS
+# ---------------------------------------------------------
 
-# 1. Arithmetic Operators
-print(5+4) # Addition 
-print(5-4) # Substraction
-print(5*4) # Multiply
-print(5/4) # Divide
-print(5//4) # Floor division/integer division
-print(5%4) # Modulus operator --> tells reminder
-print(5**2) # Power of operator
+# --- 1. Arithmetic Operators ---
+print("Addition:", 5 + 4)
+print("Subtraction:", 5 - 4)
+print("Multiplication:", 5 * 4)
+print("Division (Float):", 5 / 4)
+print("Floor Division (Int):", 5 // 4)
+print("Modulus (Remainder):", 5 % 4)
+print("Exponent (Power):", 5 ** 2)
 
-# 2. Relational Operators
-# Compares two quantities.
-print(4 > 5) 
-print(4 == 5)
-print(4 <= 5)
-print(4 != 5)
+# --- 2. Relational (Comparison) Operators ---
+print("Greater than:", 4 > 5) 
+print("Equal to:", 4 == 5)
+print("Less than or equal to:", 4 <= 5)
+print("Not equal to:", 4 != 5)
 
-# 3. Logical Operators
-# 1. and 2. or 3. not
+# --- 3. Logical Operators ---
+# 'and' evaluates to True ONLY if both operands are True.
+# 'or' evaluates to True if AT LEAST ONE operand is True.
+print("Logical AND:", 1 and 0) 
+print("Logical OR:", 1 or 0)   
+print("Logical NOT:", not 0)   
 
-print(1 and 0) # jb dono 1 honge tabhi and ka output 1 hoga else vice versa
-print(1 or 0) # jb ek true hota h to vahi output hota h
-print(not 0) # Reverse 
+# --- 4. Bitwise Operators (Operates on binary level) ---
+print("Bitwise AND:", 2 & 3)
+print("Bitwise OR:", 2 | 3)
+print("Bitwise XOR:", 2 ^ 3)   # 1 if bits are different, 0 if same
+print("Bitwise NOT:", ~3)
+print("Bitwise RIGHT Shift:", 4 >> 2) # >> Shifts bits to the right
+print("Bitwise LEFT Shift:", 5 << 2)  # << Shifts bits to the left
 
-# 4. Bitwise Operators --> Operated on binary values
+# --- 5. Assignment Operators ---
+var_a = 2     # '=' is the standard assignment
+var_a += 2    # Equivalent to: var_a = var_a + 2
+print("Assignment (+=):", var_a)
 
-# bitwise and operator
-print(2 & 3)
+# --- 6. Membership Operators ---
+# Checks if an element exists in a sequence (string, list, tuple, etc.)
+print("Is 'D' in 'Delhi'?", 'D' in 'Delhi')           # True
+print("Is 'D' not in 'Delhi'?", 'D' not in 'Delhi')   # False
+print("Is 1 in [2, 3, 4, 5, 6]?", 1 in [2, 3, 4, 5, 6]) # False
 
-# bitwise or operator 
-print(2 | 3)
 
-# bitwise xor operator
-print(2 ^ 3) # for same binary base 0 and where is different then 0
+# ---------------------------------------------------------
+# 3. PRACTICAL PROGRAM: Sum of a 3-Digit Number
+# ---------------------------------------------------------
+# Extracting individual digits using Modulus (%) and Floor Division (//).
 
-# bitwise not operator
-print(~ 3)
+number = int(input("\nEnter a 3-digit number: "))
 
-# bitwide left shift
-print(4 >> 2)
+# Extract last digit
+a = number % 10
+number = number // 10
 
-# bitwise right shift
-print(5 << 2)
+# Extract middle digit
+b = number % 10
+number = number // 10
 
-# 5. Assignment Operator
-a = 2
-# = --> Assignment operator
+# Extract first digit
+c = number % 10
 
-a = 2
-a += 2 # means --> a = a + 2
-print(a)
-
-# 5. Membership Operators
-
-# 1. in 2. not in
-
-print('D' in 'Delhi') # Output --> True
-print('D' not in 'Delhi') # Output --> False
-
-print(1 in [2, 3, 4, 5, 6]) # Output --> False because 1 is not exists in list.
-
-# Program - Find the sum of a 3 digit number entered by user
-
-number = int(input("Enter a 3 digit number: "))
-a = number%10
-number = number//10
-
-b = number%10
-number = number//10
-
-c = number%10
-
-print(a + b + c)
+print(f"The sum of the digits is: {a + b + c}")

@@ -11,7 +11,7 @@ def clean_vector(raw_str):
     Returns:
         str: A mathematically clean vector string.
     """
-    clean_str = raw_str.replace("+ -", "-")
+    clean_str = raw_str.replace("+ -", "- ")
     return clean_str
 
 class Vector:
@@ -206,7 +206,7 @@ class Point(Vector):
     A class to represent a 3D coordinate point (x, y, z).
     Inherits from Vector to utilize vector-based logic for geometry.
     """
-    def __init__(self, x1=None, y1=None, z1=None):
+    def __init__(self, x=None, y=None, z=None):
         """
         Initializes the 3D Point.
         
@@ -217,8 +217,8 @@ class Point(Vector):
             
         Note: If coordinates are not provided, generates a random point between -10 and 10.
         """
-        if x1 is not None and y1 is not None and z1 is not None:
-            self.x, self.y, self.z = x1, y1, z1
+        if x is not None and y is not None and z is not None:
+            self.x, self.y, self.z = x, y, z
 
         else:
             self.x, self.y, self.z = randint(-10, 10), randint(-10, 10), randint(-10, 10)

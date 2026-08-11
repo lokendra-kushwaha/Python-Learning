@@ -48,7 +48,7 @@ def angle_between(v1: Vector, v2: Vector) -> float:
     angle_in_radian = math.acos(cos_theta)
     angle_in_degree = math.degrees(angle_in_radian)
 
-    return  round(angle_in_degree, 2)
+    return angle_in_degree
 
 def vector_projection(v1: Vector, v2: Vector) -> float:
     """

@@ -109,17 +109,17 @@ def shortest_distance_in_3D(v1):
     """
     pass
 
+if __name__ == "__main__":
+    v1 = Vector()
+    v2 = Vector()
+    v3 = Vector()
+    print('v1 =', v1)
+    print('v2 =', v2)
+    print('v3 =', v3)
 
-v1 = Vector()
-v2 = Vector()
-v3 = Vector()
-print('v1 =', v1)
-print('v2 =', v2)
-print('v3 =', v3)
-
-print("Dot product of v1 and v2 -: ", dot_product(v1, v2))
-print("Projection of vector v1 on v2 -: ", vector_projection(v1, v2))
-print("Angle between vector v1 and vector v2 -: ", angle_between(v1, v2))
-print("Cross product of v1 and v2 -: ", cross_product(v1, v2))
-print("Scalor triple product of v1, v2, and v3 -: ", scalar_triple_product(v1, v2, v3))
-print("Vector triple product of v1, v2, and v3 -: ", vector_triple_product(v1, v2, v3))
+    print("Dot product of v1 and v2 -: ", dot_product(v1, v2))
+    print("Projection of vector v1 on v2 -: ", vector_projection(v1, v2))
+    print("Angle between vector v1 and vector v2 -: ", angle_between(v1, v2))
+    print("Cross product of v1 and v2 -: ", cross_product(v1, v2))
+    print("Scalor triple product of v1, v2, and v3 -: ", scalar_triple_product(v1, v2, v3))
+    print("Vector triple product of v1, v2, and v3 -: ", vector_triple_product(v1, v2, v3))

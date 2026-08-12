@@ -32,6 +32,32 @@ def get_absolute_value(d: float) -> float:
         return -1 * d
 #================================================================================================
 
+class CartesianLine:
+
+    def __init__(self, A: Point = None, b: Vector = None):
+        if A is not None and b is not None:
+            self.A = A
+            self.b = b
+        else:
+            self.A = Point()
+            self.b = Vector()
+
+    def __str__(self):
+        return f"(x - {self.A.x})/{self.b.a} = (y - {self.A.y})/{self.b.b} = (z - {self.A.z})/{self.b.c}".replace("- -", "+ ")
+
+class VectorLine:
+
+    def __init__(self, A: Point = None, b: Vector = None):
+        if A is not None and b is not None:
+            self.A = A
+            self.b = b
+        else:
+            self.A = Point()
+            self.b = Vector()
+
+    def __str__(self):
+        return f"{self.A.x}i + {self.A.y}j + {self.A.z}k + \u03BB({self.b})".replace("+ -", "- ")
+
 def get_vector_equation(A:Point = None, b:Vector = None, B:Point = None) -> str:
     """
     Generates the Vector Equation of a 3D line.

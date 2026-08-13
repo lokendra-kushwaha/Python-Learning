@@ -50,8 +50,13 @@ class Vector:
         Returns:
             float: The magnitude rounded to 2 decimal places.
         """
-        str_mag =  f"{(self.a**2 + self.b**2 + self.c**2)**0.5:.2f}"
-        return float(str_mag)
+        mag =  (self.a**2 + self.b**2 + self.c**2)**0.5
+        return mag
+    
+    def squareMagnitude(self: Vector) -> float:
+        
+        sqmag =  self.a**2 + self.b**2 + self.c**2
+        return sqmag
     
     def addition(self: Vector, other: Vector) -> Vector:
         """
@@ -159,7 +164,7 @@ class Vector:
         mag = self.magnitude()
         cos = []
         for ratios in self.get_direction_ratios():
-            cos.append(round(ratios/mag, 2))
+            cos.append(ratios/mag)
 
         return cos
 
@@ -178,25 +183,25 @@ class Vector:
             Vector or str: A new Vector object if successful, or an Error string for invalid ratios.
         """
         if m == 0 and n == 0:
-            return "Error: Ratio 0:0 is invalid."
+            return "Ratio 0:0 is invalid."
         
         if is_internal:
             if m + n == 0:
-                return "Error: (m + n) cann't zero in Internal division."
+                return "(m + n) cann't zero in Internal division."
 
-            new_a = round((other.a*m + self.a*n)/(m + n), 2)
-            new_b = round((other.b*m + self.b*n)/(m + n), 2)
-            new_c = round((other.c*m + self.c*n)/(m + n), 2)
+            new_a = (other.a*m + self.a*n)/(m + n)
+            new_b = (other.b*m + self.b*n)/(m + n)
+            new_c = (other.c*m + self.c*n)/(m + n)
 
             return Vector(new_a, new_b, new_c)
         
         else:          
             if m == n:
-                return "Error: n and m can not be same in External Division."
+                return "n and m can not be same in External Division."
             
-            new_a = round((other.a*m - self.a*n)/(m - n), 2)
-            new_b = round((other.b*m - self.b*n)/(m - n), 2)
-            new_c = round((other.c*m - self.c*n)/(m - n), 2)
+            new_a = (other.a*m - self.a*n)/(m - n)
+            new_b = (other.b*m - self.b*n)/(m - n)
+            new_c = (other.c*m - self.c*n)/(m - n)
             
             return Vector(new_a, new_b, new_c)
 

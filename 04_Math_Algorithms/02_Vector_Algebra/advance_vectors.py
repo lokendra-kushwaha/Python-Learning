@@ -62,7 +62,7 @@ def vector_projection(v1: Vector, v2: Vector) -> float:
     Returns:
         float: The scalar length of the projection, rounded to 2 decimal places.
     """
-    return round(dot_product(v1, v2)/v2.magnitude(), 2)
+    return dot_product(v1, v2)/v2.magnitude()
 
 def scalar_triple_product(v1: Vector, v2: Vector, v3: Vector) -> float:
     """

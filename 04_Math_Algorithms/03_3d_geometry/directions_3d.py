@@ -8,10 +8,10 @@ individual vector components and between two points in 3D space.
 # Adding the custom Vector module folder path to sys.path
 import sys
 sys.path.append(r"L:/Python/Python-Learning/04_Math_Algorithms/02_Vector_Algebra")
-from vectors import Vector
-from vectors import Point
-
+from vectors import Vector, Point
 from random import randint
+
+
 class DirectionRatio:
     """
     A class to represent the Direction Ratios (a, b, c) of a vector or a line.
@@ -39,14 +39,14 @@ class DirectionRatio:
             self.b = randint(-10, 10)
             self.c = randint(-10, 10)
 
-    def __str__(self: DirectionRatio) -> str:
+    def __str__(self) -> str:
         """
         Returns the string representation of the Direction Ratios as a tuple.
         """
-        line_point = (self.a, self.b, self.c)
-        return str(line_point)
+        dic_ratios = (self.a, self.b, self.c)
+        return str(dic_ratios)
     
-    def dic_cosine(self: DirectionRatio) -> Vector:
+    def dic_cosine(self) -> Vector:
         """
         Calculates the Direction Cosines (l, m, n) based on the current Direction Ratios.
         
@@ -66,7 +66,7 @@ class DirectionRatio:
         return Vector(l_val, m_val, n_val)
 
     
-def dic_cosine_of_a_line(p1:Point, p2:Point) -> Vector:
+def dic_cosine_of_a_line_segment(p1:Point, p2:Point) -> Vector:
     """
     Calculates the Direction Cosines of a line passing through two specific points.
     
@@ -103,4 +103,4 @@ if __name__ == "__main__":
     p2 = Point()
     print(f"Point 1: {p1}")
     print(f"Point 2: {p2}")
-    print(f"Direction Cosines between p1 and p2: {dic_cosine_of_a_line(p1, p2)}")
+    print(f"Direction Cosines between p1 and p2: {dic_cosine_of_a_line_segment(p1, p2)}")

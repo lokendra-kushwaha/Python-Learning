@@ -13,12 +13,9 @@ This engine supports two initialization methods:
 # This allows importing Point and Vector classes from external files without errors
 import sys
 sys.path.append(r"L:/Python/Python-Learning/04_Math_Algorithms/02_Vector_Algebra")
-from vectors import Vector
-from vectors import Point
-from advance_vectors import angle_between
-from advance_vectors import cross_product
-from advance_vectors import dot_product
-from geometry_3d import DirectionRatio
+
+from vectors import Vector, Point
+from advance_vectors import angle_between, cross_product, dot_product 
 
 #================================================================================================
 def get_absolute_value(d: float) -> float:

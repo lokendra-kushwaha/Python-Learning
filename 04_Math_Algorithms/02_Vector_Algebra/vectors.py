@@ -58,7 +58,8 @@ class Vector:
         sqmag =  self.a**2 + self.b**2 + self.c**2
         return sqmag
     
-    def addition(self: Vector, other: Vector) -> Vector:
+
+    def __add__(self: Vector, other: Vector) -> Vector:
         """
         Adds another vector to the current vector.
         
@@ -71,7 +72,7 @@ class Vector:
         new_a, new_b, new_c = self.a + other.a, self.b + other.b, self.c + other.c
         return Vector(new_a, new_b, new_c)
     
-    def substraction(self: Vector, other: Vector) -> Vector:
+    def __sub__(self: Vector, other: Vector) -> Vector:
         """
         Subtracts another vector from the current vector.
         
@@ -82,6 +83,37 @@ class Vector:
             Vector: A new Vector object representing the difference.
         """
         new_a, new_b, new_c = self.a - other.a, self.b - other.b, self.c - other.c   
+        return Vector(new_a, new_b, new_c)
+    
+    def __mul__(self: Vector, scalor: float) -> Vector:
+        """
+        Multiplies the vector by a scalar number.
+        
+        Args:
+            scalor (int/float): The number to multiply with.
+            
+        Returns:
+            Vector: A new scaled Vector object.
+        """
+        new_a, new_b, new_c = self.a * scalor, self.b * scalor, self.c * scalor
+        return Vector(new_a, new_b, new_c)
+    
+    def __rmul__(self: Vector, scalor: float):
+        """
+        Multiplies the vector by a scalar number from right side.
+        
+        Args:
+            scalor (int/float): The number to multiply with.
+            
+        Returns:
+            Vector: A new scaled Vector object.
+        """
+        return self.__mul__(scalor)
+    
+    def __truediv__(self: Vector, scalor):
+        new_a = self.a/scalor
+        new_b = self.b/scalor
+        new_c = self.c/scalor
         return Vector(new_a, new_b, new_c)
     
     def unit_vector(self: Vector) -> Vector:
@@ -95,19 +127,7 @@ class Vector:
         new_a, new_b, new_c = round(self.a/mag, 2), round(self.b/mag, 2), round(self.c/mag, 2)
 
         return Vector(new_a, new_b, new_c)
-
-    def scalor_multiply(self: Vector, scalor: int) -> Vector:
-        """
-        Multiplies the vector by a scalar number.
-        
-        Args:
-            scalor (int/float): The number to multiply with.
-            
-        Returns:
-            Vector: A new scaled Vector object.
-        """
-        new_a, new_b, new_c = scalor*self.a, scalor*self.b, scalor*self.c
-        return Vector(new_a, new_b, new_c)
+    
     
     def is_collinear(self: Vector, other: Vector) -> str:
         """
@@ -232,6 +252,18 @@ class Point(Vector):
         """Returns the point in standard coordinate format: (x, y, z)."""
         x, y, z = self.x, self.y, self.z
         return f"{x, y, z}"
+    
+    def __add__(self:Point, other: Point) -> Point:
+        return Point(self.x + other.x, self.y + other.y, self.z + other.z)
+    
+    def __sub__(self: Point, other:Point) -> Point:
+        return Point(self.x - other.x, self.y - other.y, self.z - other.z)
+    
+    def __mul__(self: Point, scalor: float) -> Point:
+        return Point(self.x * scalor, self.y * scalor, self.z * scalor)
+    
+    def __rmul__(self, scalor: float) -> Point:
+        return self.__mul__(scalor)
     
     def vector_joining_two_points(self: Point, other: Point) -> Vector:
         """

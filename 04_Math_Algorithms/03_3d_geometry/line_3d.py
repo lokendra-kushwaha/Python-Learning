@@ -31,7 +31,7 @@ def get_absolute_value(d: float) -> float:
 
 class CartesianLine:
 
-    def __init__(self, A: Point = None, b: Vector = None):
+    def __init__(self, A: Point = None, a: Vector = None, b: Vector = None):
         if A is not None and b is not None:
             self.A = A
             self.b = b
@@ -44,16 +44,16 @@ class CartesianLine:
 
 class VectorLine:
 
-    def __init__(self, A: Point = None, b: Vector = None):
-        if A is not None and b is not None:
-            self.A = A
+    def __init__(self, a: Vector = None, b: Vector = None):
+        if a is not None and b is not None:
+            self.a = a
             self.b = b
         else:
-            self.A = Point()
+            self.a = Vector()
             self.b = Vector()
 
     def __str__(self):
-        return f"{self.A.x}i + {self.A.y}j + {self.A.z}k + \u03BB({self.b})".replace("+ -", "- ")
+        return f"{self.a} + \u03BB({self.b})".replace("+ -", "- ")
 
 def get_vector_equation(A:Point = None, b:Vector = None, B:Point = None) -> str:
     """
@@ -200,9 +200,9 @@ def get_distance_between_lines(A1:Point = None, b1:Vector = None, B1:Point = Non
     mag_cross = Vector.magnitude(cross_product(b1, b2))
     # Skew Lines Condition
     if mag_cross != 0:
-        return get_absolute_value(dot_product(cross_product(b1, b2), Vector.substraction(a2, a1)) / mag_cross)
+        return get_absolute_value(dot_product(cross_product(b1, b2), (a2 - a1)) / mag_cross)
     else:
-        return get_absolute_value(Vector.magnitude(cross_product(b1, Vector.substraction(a2, a1))) / Vector.magnitude(b1))
+        return get_absolute_value(Vector.magnitude(cross_product(b1, (a2 - a1))) / Vector.magnitude(b1))
         
 
 if __name__ == "__main__":

@@ -53,7 +53,10 @@ class VectorLine:
             self.b = Vector()
 
     def __str__(self):
-        return f"{self.a} + \u03BB({self.b})".replace("+ -", "- ")
+        return f"xi + yj + zk = {self.a} + \u03BB({self.b})".replace("+ -", "- ")
+    
+    def __repr__(self):
+        return self.__str__(self)
 
 def get_vector_equation(A:Point = None, b:Vector = None, B:Point = None) -> str:
     """

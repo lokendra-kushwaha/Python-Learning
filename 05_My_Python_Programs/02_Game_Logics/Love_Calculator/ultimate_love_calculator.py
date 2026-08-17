@@ -63,7 +63,6 @@ def run_ultimate_calculator():
             time.sleep(1) 
             print("\n✅ Analysis Complete!\n")
             
-            # The Master Prank Logic (Fully in English now)
             if gender1 == "Male" and gender2 == "Male":
                 print(f"🚨 ALERT! {your_name} and {partner_name} are both MALES!")
                 print("🏳️‍🌈 Result: 100% GAY! The bromance is off the charts! What are you two hiding? 🤣")

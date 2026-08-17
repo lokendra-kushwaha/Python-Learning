@@ -12,7 +12,7 @@ Dependencies: Custom vectors and line_3d modules.
 # This allows importing Point and Vector classes from external files without errors
 import sys
 # Make sure to adjust this path according to your local setup
-sys.path.append(r"L:/Python-Learning/04_Math_Algorithms/02_Vector_Algebra")
+sys.path.append(r"L:/01_AI_and_Data_Science/Python-Learning/04_Math_Algorithms/02_Vector_Algebra")
 from warnings import warn
 from typing import Union, Tuple
 from math import sqrt, degrees, acos, asin

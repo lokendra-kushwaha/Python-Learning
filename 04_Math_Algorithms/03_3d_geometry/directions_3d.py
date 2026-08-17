@@ -7,10 +7,37 @@ individual vector components and between two points in 3D space.
 """
 # Adding the custom Vector module folder path to sys.path
 import sys
-sys.path.append(r"L:/Python/Python-Learning/04_Math_Algorithms/02_Vector_Algebra")
+sys.path.append(r"L:/01_AI_and_Data_Science/Python-Learning/04_Math_Algorithms/02_Vector_Algebra")
 from vectors import Vector, Point
 from random import randint
 
+#================================================================================================
+def validate_type(var_name: str, var_value: any, expected_type: tuple | type):
+    """
+    Validates if a variable matches the expected class type based on its string name.
+
+    This helper function bypasses Python's strict memory address checking by 
+    comparing the names of the classes. It prevents 'ghost class' errors when 
+    reloading modules in active environments.
+
+    Args:
+        var (Any): The variable or object whose type needs to be checked.
+        expected_type (type): The class/type that the variable is expected to be.
+        var_name (str): The name of the variable (used to format the error message).
+
+    Raises:
+        TypeError: If the class name of var does not match the class name 
+                   of expected_type.
+    """
+    if not isinstance(var_value, expected_type):
+        if isinstance(expected_type, tuple):
+            expected_name = " or ".join([t.__name__ for t in expected_type])
+        else:
+            expected_name = expected_type.__name__
+            
+        raise TypeError(f"Expected '{var_name}' to be {expected_name}, got {type(var_value).__name__} instead.")
+
+#=================================================================================================
 
 class DirectionRatio:
     """
@@ -18,7 +45,7 @@ class DirectionRatio:
     If no specific values are provided during initialization, it assigns 
     random integers between -10 and 10.
     """
-    def __init__(self, a=None, b=None, c=None, data=None):
+    def __init__(self, a: float = None, b: float = None, c: float = None, data=None):
         """
         Initializes the Direction Ratio object.
         
@@ -29,6 +56,10 @@ class DirectionRatio:
         data (any, optional): Placeholder for any additional data handling.
         """
         if a is not None and b is not None and c is not None:
+            validate_type('a', a, (float, int))
+            validate_type('b', b, (float, int))
+            validate_type('c', c, (float, int))
+
             self.a = a
             self.b = b
             self.c = c
@@ -46,6 +77,9 @@ class DirectionRatio:
         dic_ratios = (self.a, self.b, self.c)
         return str(dic_ratios)
     
+    def __repr__(self):
+        return self.__str__()
+    
     def dic_cosine(self) -> Vector:
         """
         Calculates the Direction Cosines (l, m, n) based on the current Direction Ratios.
@@ -53,7 +87,7 @@ class DirectionRatio:
         Returns:
         Vector: A Unit Vector representing the direction cosines. 
                 Returns a zero vector if the magnitude is 0 to avoid DivisionByZero error.
-        """
+        """ 
         magnitude = (self.a**2 + self.b**2 + self.c**2)**0.5
         # Crash protection: If magnitude is zero, return a zero Vector
         if magnitude == 0:
@@ -77,6 +111,9 @@ def dic_cosine_of_a_line_segment(p1:Point, p2:Point) -> Vector:
     Returns:
     Vector: A Unit Vector containing the calculated direction cosines (l, m, n).
     """
+    validate_type('p1', p1, Point)
+    validate_type('p2', p2, Point)
+    
     magnitude = ((p2.x - p1.x)**2 + (p2.y - p1.y)**2 + (p2.z - p1.z)**2)**0.5
 
     # Crash protection: Check if both points are at the exact same location

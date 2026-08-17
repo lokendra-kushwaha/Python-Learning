@@ -351,6 +351,7 @@ def get_vector_equation(d:float = None, n:Vector = None, A:Point = None, B:Point
             "e.g., either valid Distance - Vector OR Distance - Point OR 3 Points."
         )
 
+
 def get_cartesian_equation(d:float = None, n:Vector = None, A:Point = None, B:Point = None, C:Point = None) -> CartesianPlane | str:
     """
     Generates the Cartesian equation of a Plane (Ax + By + Cz = D).
@@ -396,6 +397,7 @@ def get_cartesian_equation(d:float = None, n:Vector = None, A:Point = None, B:Po
             "Ambiguous arguments definition. You must provide a complete parameter set "
             "e.g., either valid Distance - Vector OR Distance - Point OR 3 Points."
         )
+
 
 def check_point_on_plane(plane: VectorPlane, target_point: Point) -> bool:
     """
@@ -491,6 +493,7 @@ def get_line_through_intersection(plane1: VectorPlane, plane2: VectorPlane) -> V
     
     return VectorLine(a=vec_a, b=vec_b)
 
+
 def get_line_plane_intersection(plane: VectorPlane, line: VectorLine) -> Vector:
     """
     Finds the exact intersection point of a vector line and a vector plane.
@@ -524,53 +527,30 @@ def get_line_plane_intersection(plane: VectorPlane, line: VectorLine) -> Vector:
     return intersection_point 
     
 
-def are_lines_coplaner(vec_line1: VectorLine = None, vec_line2: VectorLine = None, cart_line1: CartesianLine = None, cart_line2: CartesianLine = None) -> bool:
+def are_lines_coplaner(vec_line1: VectorLine, vec_line2: VectorLine) -> bool:
     """
     Checks if two given 3D lines are coplanar (lie on the exact same plane).
-    Supports checking for both VectorLine objects and CartesianLine objects.
+    Supports checking for VectorLine objects.
 
     Parameters:
         vec_line1, vec_line2 (VectorLine, optional): Lines in vector format.
-        cart_line1, cart_line2 (CartesianLine, optional): Lines in cartesian format.
 
     Returns:
         bool: True if the lines are coplanar, False otherwise.
     """
-    if vec_line1 is not None and vec_line2 is not None:
-        validate_type('vec_line1', vec_line1, VectorLine)
-        validate_type('vec_line2', vec_line2, VectorLine)
+    validate_type('vec_line1', vec_line1, VectorLine)
+    validate_type('vec_line2', vec_line2, VectorLine)
 
-        a1 = vec_line1.a
-        a2 = vec_line2.a
+    a1 = vec_line1.a
+    a2 = vec_line2.a
 
-        if dot_product((a2 - a1), cross_product(vec_line1.b, vec_line2.b)) == 0:
-            return True
-        
-        return False
-        
-    elif cart_line1 is not None and cart_line2 is not None:
-        validate_type('cart_line1', cart_line1, CartesianLine)
-        validate_type('cart_line2', cart_line2, CartesianLine)
-
-        a1 = Vector(cart_line1.A.x, cart_line1.A.y, cart_line1.A.z)
-        a2 = Vector(cart_line2.A.x, cart_line2.A.y, cart_line2.A.z)
-
-        b1 = Vector(cart_line1.b.a, cart_line1.b.b, cart_line1.b.c)
-        b2 = Vector(cart_line2.b.a, cart_line2.b.b, cart_line2.b.c)
-
-        if dot_product(a2 - a1, cross_product(b1, b2)) == 0:
-            return True
-        
-        return False
-
-    else:
-        raise ValueError(
-            "Ambiguous plane definition. You must provide a complete parameter set "
-            "e.g., either valid VectorLine OR a CartesianLine."
-        )
+    if dot_product((a2 - a1), cross_product(vec_line1.b, vec_line2.b)) == 0:
+        return True
+    
+    return False
 
 
-def angle_between_planes(cart_plane1: CartesianPlane = None, cart_plane2: CartesianPlane = None, vec_plane1: VectorPlane = None, vec_plane2: VectorPlane = None) -> float:
+def angle_between_planes(vec_plane1: VectorPlane = None, vec_plane2: VectorPlane = None) -> float:
     """
     Calculates the shortest angle between two planes.
     Accepts either two CartesianPlane objects or two VectorPlane objects.
@@ -586,18 +566,10 @@ def angle_between_planes(cart_plane1: CartesianPlane = None, cart_plane2: Cartes
 
         costheta =  dot_product(vec_plane1.n, vec_plane2.n) / (Vector.magnitude(vec_plane1.n) * Vector.magnitude(vec_plane2.n))
 
-    elif cart_plane1 is not None and cart_plane2 is not None:
-        validate_type('cart_plane1', cart_plane1, CartesianPlane)
-        validate_type('cart_plane2', cart_plane2, CartesianPlane)
-
-        n1 = Vector(cart_plane1.A, cart_plane1.B, cart_plane1.C)
-        n2 = Vector(cart_plane2.A, cart_plane2.B, cart_plane2.C)
-        costheta = dot_product(n1, n2) / (Vector.magnitude(n1) * Vector.magnitude(n2))
-
     else:
         raise ValueError(
             "Ambiguous plane definition. You must provide a complete parameter set "
-            "e.g., either valid VectorPlanes OR a CartesianPlanes."
+            "e.g., either valid VectorPlanes."
         )
     
     # Clamping to avoid domain errors
@@ -608,7 +580,7 @@ def angle_between_planes(cart_plane1: CartesianPlane = None, cart_plane2: Cartes
     return angle_in_degree
 
 
-def distance_between_point_and_plane(cart_plane: CartesianPlane = None, vec_plane: VectorPlane = None, P: Point = None) -> float:
+def distance_between_point_and_plane(vec_plane: VectorPlane = None, P: Point = None) -> float:
     """
     Calculates the shortest (perpendicular) distance from a point to a plane.
 
@@ -622,20 +594,16 @@ def distance_between_point_and_plane(cart_plane: CartesianPlane = None, vec_plan
     """
     vec_a = Vector(P.x, P.y, P.z)
 
-    if vec_plane is not None:
+    if vec_plane is not None and P is not None:
         validate_type('vec_plane', vec_plane, VectorPlane)
         validate_type('P', P, Point)
 
         distance = (dot_product(vec_a, vec_plane.n) - vec_plane.d) / Vector.magnitude(vec_plane.n)
-
-    elif cart_plane is not None:
-        validate_type('cart_plane', cart_plane, CartesianPlane)
-        distance = (dot_product(vec_a, Vector(cart_plane.A, cart_plane.B, cart_plane.C)) - cart_plane.D) / Vector.magnitude(Vector(cart_plane.A, cart_plane.B, cart_plane.C))
     
     else:
         raise ValueError(
             "Ambiguous plane or point definition. You must provide a complete parameter set "
-            "e.g., either valid VectorPlane - Point OR CartesianPlane - Point."
+            "e.g., either valid VectorPlane - Point."
         )
 
     return abs(distance)
@@ -678,7 +646,7 @@ def distance_between_planes(plane1: VectorPlane, plane2: VectorPlane) -> float:
     return abs(distance)
 
 
-def angle_between_line_and_plane(vec_line: VectorLine = None, cart_line: CartesianLine = None, vec_plane: VectorPlane = None, cart_plane: CartesianPlane = None) -> float:
+def angle_between_line_and_plane(vec_line: VectorLine = None, vec_plane: VectorPlane = None) -> float:
     """
     Calculates the angle of intersection between a 3D line and a plane.
 
@@ -692,16 +660,10 @@ def angle_between_line_and_plane(vec_line: VectorLine = None, cart_line: Cartesi
 
         sintheta = dot_product(vec_plane.n, vec_line.b) / (Vector.magnitude(vec_plane.n) * Vector.magnitude(vec_line.b))
     
-    elif cart_line is not None and cart_plane is not None:
-        validate_type('cart_line', cart_line, CartesianLine)
-        validate_type('cart_plane', cart_plane, CartesianPlane)
-
-        sintheta = dot_product(cart_plane.n, cart_line.b) / (Vector.magnitude(cart_plane.n) * Vector.magnitude(cart_line.b))
-
     else:
         raise ValueError(
             "Ambiguous plane - line definition. You must provide a complete parameter set "
-            "e.g., either valid VectorPlane - VectorLine OR CartesianPlane - CartesianLine."
+            "e.g., either valid VectorPlane - VectorLine."
         )
 
     # Clamping to avoid domain errors
@@ -732,6 +694,7 @@ def get_foot_of_perpendicular(plane: VectorPlane, A: Point) -> Point:
 
     foot = Point(A.x + vec_n.a*lam, A.y + vec_n.b*lam, A.z + vec_n.c*lam)
     return foot
+
 
 def get_image_point(original_point: Point, foot_of_perpendicular:Point) -> Point:
     """
@@ -906,8 +869,7 @@ if __name__ == "__main__":
 
     print("--- [ 3. Distances & Angles ] ---")
     print(f"> Angle between Vector Planes:     {angle_between_planes(vec_plane1=vec_pl1, vec_plane2=vec_pl2):.2f}°")
-    print(f"> Angle between Cartesian Planes:  {angle_between_planes(cart_plane1=cart_pl1, cart_plane2=cart_pl2):.2f}°")
-    print(f"> Dist (Point p1 to Cart Plane 1): {distance_between_point_and_plane(cart_plane=cart_pl1, P=p1):.4f} units\n")
+    print(f"> Dist (Point p1 to Cart Plane 1): {distance_between_point_and_plane(vec_plane=vec_pl1, P=p1):.4f} units\n")
 
     print("--- [ 4. Advanced Geometry ] ---")
     foot_point = get_foot_of_perpendicular(plane=vec_pl1, A=p1)

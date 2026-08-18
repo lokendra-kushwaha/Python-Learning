@@ -25,10 +25,4 @@ Hey! In this section, we aren't just looking at basic data types on the surface.
 * Under the hood, Python simply stores them as two side-by-side float numbers in memory (one for the Real part, and one for the Imaginary part). This is heavily used in scientific computing and machine learning.
 
 ---
-
-## 📁 Folder Structure
-* **`code/`** $\rightarrow$ Contains all my practice `.py` scripts for primitive data types.
-* **`notes/`** $\rightarrow$ Contains deep-dive documentation on memory allocation, garbage collection, and float precision issues.
-
----
 *💡 Note: True engineering is not just about knowing syntax—it's about understanding how things work under the hood!*

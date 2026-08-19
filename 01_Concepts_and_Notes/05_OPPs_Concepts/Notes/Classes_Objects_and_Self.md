@@ -10,6 +10,25 @@ Here is the complete architectural breakdown of Classes, Objects, the `self` med
 * **The Class (The Blueprint):** A Class is just a theoretical blueprint or a set of rules. It takes up no operational memory on its own.
 * **The Object (The Instance):** An Object is an "Instance of a Class." When you create an object, the CPython engine reads the class blueprint and physically allocates a block of RAM to store that specific entity's data. 
 
+### 📊 Class ASCII Architecture Diagram
+
+                    [ Customer Class ]
+                    -------------------                                        
+                    |   - pin         |                                           
+                    |   - balance     |      <------- (Data/Variables/Atttibutes)                  
+                    |   - acnumber    |        
+                    |-----------------|                                    
+                    |  + create_pin() |                                              
+                    |  + change_pin() |      <------- (Methods)                      
+                    |  + check_bal()  |
+                    |  + withdraw()   |
+                    -------------------
+
+> **💡 UML Access Modifiers (Visibility Legend):**
+> * + **Public:** Accessible from anywhere (Outside the class).
+> * - **Private:** Accessible ONLY from within the class (Strictly Encapsulated).
+> * # **Protected:** Accessible within the class and its Child classes (Used in Inheritance).
+
 *Analogy: A Class is the architectural map of a house. The Object is the actual physical house built from that map. You cannot live inside a map; you live inside the instance.*
 
 ---

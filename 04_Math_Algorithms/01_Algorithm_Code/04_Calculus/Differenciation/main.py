@@ -6,13 +6,13 @@ exp1 = Expression(Power('x', Constant(2)), Power('-x', Constant(-2)))
 print(exp1.derive())
 
 x = Variable('x')
-
 equ = 5 * x**2 + 3 * x + 2
 print('original eq - ', equ)
-print(equ.derive())
+print(equ.derive().simplify())
 
-equ1 = x*x*x
-print(equ1.derive())
+eq2 = x**3 - x**2
+print(eq2.derive().simplify())
 
-equ2 = x**3
-print(equ2.derive())
+
+eq3 = x**3 / (-4)**0.5
+print(eq3.derive().simplify())

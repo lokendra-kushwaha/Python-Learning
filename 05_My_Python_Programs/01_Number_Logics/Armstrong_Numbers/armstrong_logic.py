@@ -1,7 +1,3 @@
-#==================================================================================================
-#                            Armstrong Number Finder in a Range    
-#==================================================================================================
-
 # Armstrong Number Finder in a Range
 """
 This program tell a number is an Armsrong number or not in a given range.
@@ -27,10 +23,8 @@ for number in range(int(StartNumberInString),int(EndNumberInString)+1):
     if armstrong_sum == int(number): 
             print(number,"is an Armstrong Number.")
 
-#==================================================================================================
-#                            Armstrong Number Checker    
-#==================================================================================================
 
+# Armstrong Number Checker
 """
 This program tell a number is an Armsrong number or not in a given range.
 Input: The progran take two input first is starting no. and second is last no.

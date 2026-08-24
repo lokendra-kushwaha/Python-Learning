@@ -1,4 +1,5 @@
 from core.primitives import MathNode, Constant, Variable
+import math
 
 class Power(MathNode):
 
@@ -178,3 +179,61 @@ class Divide(MathNode):
         denominator = Power(self.den, Constant(2))
 
         return Divide(numerator, denominator)
+    
+
+class Exp(MathNode):
+    
+    def __init__(self, argument):
+        self.argument = argument
+
+
+    def __repr__(self):
+        return f"e^{self.argument}"
+    
+
+    def simplify(self):
+        sim_arg = self.argument.simplify()
+
+        if isinstance(sim_arg, Constant):
+            if sim_arg.value == 0:
+                return Constant(1)
+            
+            elif sim_arg.value == 1:
+                return Constant(math.e)
+        
+        return Exp(sim_arg)
+            
+
+    def derive(self):
+
+        return Multiply(self, self.argument.derive())
+
+
+class Log(MathNode):
+    
+    def __init__(self, argument):
+        self.argument = argument
+
+
+    def __repr__(self):
+        return f"ln({self.argument})"
+    
+
+    def simplify(self):
+        sim_arg = self.argument.simplify()
+
+        if isinstance(sim_arg, Constant):
+            if sim_arg.value == 0:
+                return Constant(1)
+            
+            if math.isclose(sim_arg.value, math.e):
+                return Constant(1)
+            
+        return Log(sim_arg)
+    
+
+    def derive(self):
+
+        return Divide(self.argument.derive(), self.argument)
+
+

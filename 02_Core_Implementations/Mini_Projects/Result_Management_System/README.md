@@ -6,14 +6,14 @@ Including both versions here demonstrates the evolution of the code—starting f
 
 ## 📂 Project Files & Evolution
 
-### 1. Version 1: Basic Result Tracker (v1_basic_result.py)
+### 1. Version 1: Basic Result Tracker (result_management1.0.0.py)
 The initial version focuses on fundamental File I/O operations and dictionary manipulations.
 * **Unique ID Generation:** Creates a unique login ID for every new student.
 * **Result Calculation:** Accepts marks for multiple subjects and calculates the total and percentage.
 * **Personal File Handling:** Saves individual student records in uniquely named .txt files.
 * **Retrieval System:** Allows returning students to view their saved results using their Unique ID.
 
-### 2. Version 2: Advanced Tracker with Analytics (v2_advanced_result.py)
+### 2. Version 2: Advanced Tracker with Analytics (result_management1.0.1.py)
 The upgraded version builds upon the first one by introducing a global tracking mechanism and better error handling.
 * **Global Score Tracker:** Introduces a centralized file (maxMinMarks.txt) to continuously track the total marks of all registered students.
 * **Max/Min Analytics:** Allows users to instantly fetch the Highest and Lowest scores across the entire system.

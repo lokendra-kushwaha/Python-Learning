@@ -10,11 +10,11 @@ This repository moves away from simple in-memory lists (Eager Evaluation) and fo
 
     10_Iterators_and_Generators/
     │
-    ├── Concepts/ (The Practical Engine)
+    ├── src/ (The Practical Engine)
     │   ├── iterators_and_iterables.py           # OOP Custom Iterators, Lazy Evaluation, dir() inspection
     │   └── generators_and_yield.py              # The yield keyword, freezing state, and custom range
     │
-    └── Notes/ (The Blueprint & Documentation)
+    └── docs/ (The Blueprint & Documentation)
         ├── Iterators_and_Memory_Architecture.md # Breakdown of __iter__, __next__, and Lazy Evaluation
         └── Generators_and_Yield_Architecture.md # Breakdown of yield, Stack Frames, and Data Pipelines
 
@@ -42,8 +42,8 @@ This module decodes the exact internal mechanics of Python loops and memory mana
 
 ## 🛠️ How to Use This Module
 
-1. Read the Blueprints: Open the `.md` files in the `Notes/` folder first. Understand the difference between an Iterable, an Iterator, and a Generator before looking at the code.
-2. Run the Engines: Execute the `.py` scripts in the `Concepts/` folder. Follow the embedded AI EXPLANATIONS to see exactly how Python manages the Call Stack and memory under the hood.
+1. Read the Blueprints: Open the `.md` files in the `docs/` folder first. Understand the difference between an Iterable, an Iterator, and a Generator before looking at the code.
+2. Run the Engines: Execute the `.py` scripts in the `src/` folder. Follow the embedded AI EXPLANATIONS to see exactly how Python manages the Call Stack and memory under the hood.
 
 ---
-Engineered for Data Scientists who need to process Terabytes of data using Gigabytes of RAM.
+*Engineered for Data Scientists who need to process Terabytes of data using Gigabytes of RAM.*

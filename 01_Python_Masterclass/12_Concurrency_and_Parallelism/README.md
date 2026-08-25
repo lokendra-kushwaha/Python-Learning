@@ -9,12 +9,12 @@ Here, we explore the "Trinity" of Python Performance: **Multithreading, Multipro
 ## 📂 Directory Structure
 
     12_Concurrency_and_Parallelism/
-    ├── Concepts/
+    ├── src/
     │   ├── 12_Multithreading_Architecture.py    # (I/O Bound / Shared Memory)
     │   ├── 13_Multiprocessing_Architecture.py   # (CPU Bound / Isolated Memory)
     │   └── 14_Asyncio_Architecture.py           # (Extreme I/O Bound / Event Loop)
     │
-    ├── Notes/
+    ├── docs/
     │   ├── 12_Multithreading_Architecture.md
     │   ├── 13_Multiprocessing_Architecture.md
     │   └── 14_Asyncio_Architecture.md
@@ -50,5 +50,3 @@ Here, we explore the "Trinity" of Python Performance: **Multithreading, Multipro
 
 1. **Read the Notes First:** Open the .md files in the Notes/ folder to understand the memory architecture, C-level implementation, and the "Why" behind the code.
 2. **Run the Concepts:** Navigate to the Concepts/ folder and run the python files to see real-time execution differences between Synchronous and Asynchronous/Parallel approaches.
-
-> *"Amateurs focus on the syntax. Architects focus on the memory."*

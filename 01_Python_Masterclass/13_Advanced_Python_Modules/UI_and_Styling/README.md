@@ -35,5 +35,3 @@ Since `rich` is a third-party module, you need to install it via pip before runn
 * **Data Tables:** Structuring database or API results into neatly formatted CLI tables.
 * **Markdown Rendering:** Parsing and displaying `.md` content directly inside the terminal.
 * **Progress Bars:** Utilizing the `track()` function to create instant, dynamic loading bars for loops.
-
-> *"A great architect knows that a script isn't just about flawless logic; it's also about how gracefully it presents its results to the user."*

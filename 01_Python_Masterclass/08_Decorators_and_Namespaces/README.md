@@ -10,10 +10,10 @@ Here, we decode exactly how the CPython engine maps variables in the RAM (Namesp
 
     08_Decorators_and_Namespaces/
     │
-    ├── 📂 Concepts/ (The Practical Engine)
+    ├── 📂 src/ (The Practical Engine)
     │   └── decorators_and_namespaces.py             # Code demonstrating LEGB, Closures, and Wrapper functions
     │
-    └── 📂 Notes/ (The Blueprint & Documentation)
+    └── 📂 docs/ (The Blueprint & Documentation)
         └── Namespaces_Closures_and_Decorators.md    # Architectural breakdown of memory dictionaries and __closure__
 
 ---
@@ -32,8 +32,8 @@ Unlike standard tutorials that just teach the `@` syntax, this module dives deep
 
 ## 🛠️ How to Use This Module
 
-1.  **Study the Blueprint:** Open `Namespaces_Closures_and_Decorators.md` in the `Notes/` folder. Read the 'Under the Hood' sections to understand how the Garbage Collector behaves before looking at the code.
-2.  **Execute the Engine:** Run the `.py` script in the `Concepts/` folder. The file contains heavily commented "🧠 AI EXPLANATIONS" detailing the exact moment a Closure is formed and memory is preserved.
+1.  **Study the Blueprint:** Open `Namespaces_Closures_and_Decorators.md` in the `docs/` folder. Read the 'Under the Hood' sections to understand how the Garbage Collector behaves before looking at the code.
+2.  **Execute the Engine:** Run the `.py` script in the `src/` folder. The file contains heavily commented "🧠 EXPLANATIONS" detailing the exact moment a Closure is formed and memory is preserved.
 
 ---
 *Engineered for System Architects who need to control exactly how their functions execute in memory.*

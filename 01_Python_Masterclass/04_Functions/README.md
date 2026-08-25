@@ -6,10 +6,10 @@ Welcome to the **Functions** module. Here, we document functions not just as reu
 
 This module is organized into practical implementations and deep-dive architectural theory notes.
 
-* **`Concepts/` (Practical Code)**
+* **`src/` (Practical Code)**
   * `01_functions_in_python.py`: Code examples demonstrating function creation, execution, and core mechanics.
 
-* **`Notes/` (System Architecture)**
+* **`docs/` (System Architecture)**
   * `Args_and_Kwargs_Under_The_Hood.md`: How the engine dynamically packs arguments into Tuples and Dictionaries.
   * `Functions_Under_The_Hood.md`: Functions as First-Class Objects, the Call Stack, and Pass by Object Reference.
   * `Higher_Order_Functions.md`: Functions that accept or return other functions.

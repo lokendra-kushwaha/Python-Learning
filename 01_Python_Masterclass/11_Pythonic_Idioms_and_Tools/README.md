@@ -10,10 +10,10 @@ Here, we step away from deep memory architecture for a moment to focus on syntax
 
     11_Pythonic_Idioms_and_Tools/
     │
-    ├── Concepts/ (The Practical Engine)
+    ├── src/ (The Practical Engine)
     │   └── pythonic_masterclass.py          # Code demonstrating ternary, for..else, f-strings, and enumerate
     │
-    └── Notes/ (The Blueprint & Documentation)
+    └── docs/ (The Blueprint & Documentation)
         └── Pythonic_Idioms_and_Tools.md     # Breakdown of PEP8, Doc-strings, and Introspection (__dict__)
 
 ---
@@ -31,8 +31,8 @@ This module focuses on the "Pythonic" way—leveraging Python's unique features 
 
 ## 🛠️ How to Use This Module
 
-1. Read the Standards: Open the `.md` file in the `Notes/` folder to understand the rules of PEP 8 and why Introspection is a superpower for debugging.
-2. Run the Toolkit: Execute the `.py` script in the `Concepts/` folder. Pay close attention to how the `for...else` loop triggers its logic based on the `break` statement.
+1. Read the Standards: Open the `.md` file in the `docs/` folder to understand the rules of PEP 8 and why Introspection is a superpower for debugging.
+2. Run the Toolkit: Execute the `.py` script in the `src/` folder. Pay close attention to how the `for...else` loop triggers its logic based on the `break` statement.
 
 ---
 Engineered to make your code instantly recognizable as the work of a Senior Python Developer.

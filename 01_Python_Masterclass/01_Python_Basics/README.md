@@ -16,8 +16,7 @@ If you think Python's `a = 5` and C/C++'s `int a = 5;` work the exact same way u
 
 ## 📁 Folder Structure
 
-* **`code/`** $\rightarrow$ Contains my basic Python scripts, syntax practice, and foundational exercises.
-* **`notes/`** $\rightarrow$ Contains my in-depth theoretical notes (like *Boxes vs. Labels* and *Memory Architecture*). 
+* **`src/`** $\rightarrow$ Contains my basic Python scripts, syntax practice, and foundational exercises.
+* **`docs/`** $\rightarrow$ Contains my in-depth theoretical notes (like *Boxes vs. Labels* and *Memory Architecture*). 
 
 ---
-*💡 "To master a language, don't just learn the syntax—understand how it talks to the RAM!"*

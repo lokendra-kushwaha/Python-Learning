@@ -10,10 +10,10 @@ Before we train Machine Learning models, we must know how to securely load massi
 
     06_File_Handling_and_Serialization/
     │
-    ├── 📂 Concepts/ (The Practical Engine)
+    ├── 📂 src/ (The Practical Engine)
     │   └── file_handling_and_serialization.py   # Code for I/O, Buffer flushing, JSON, and Pickling
     │
-    └── 📂 Notes/ (The Blueprint & Documentation)
+    └── 📂 docs/ (The Blueprint & Documentation)
         └── File_Handling_and_Serialization.md   # Architectural breakdown of OS Buffers, JSON limits, and Pickle logic
 
 ---
@@ -32,8 +32,8 @@ This module focuses on the "Why" and "How" of data persistence, moving beyond ba
 
 ## 🛠️ How to Use This Module
 
-1.  **Read the Architecture First:** Open the `.md` file in the `Notes/` folder to understand the theory behind Memory Buffers and Serialization protocols.
-2.  **Execute the Engine:** Run the script inside the `Concepts/` folder. The code is deeply commented with "🧠 EXPLANATIONS" to show you exactly what happens in the background when an object is serialized.
+1.  **Read the Architecture First:** Open the `.md` file in the `docs/` folder to understand the theory behind Memory Buffers and Serialization protocols.
+2.  **Execute the Engine:** Run the script inside the `src/` folder. The code is deeply commented with "🧠 EXPLANATIONS" to show you exactly what happens in the background when an object is serialized.
 
 ---
 *Engineered for Data Science readiness and optimized memory management.*

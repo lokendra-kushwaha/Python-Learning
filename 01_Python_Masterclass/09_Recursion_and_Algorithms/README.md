@@ -10,10 +10,10 @@ Recursion is elegant, but without understanding the Operating System's Call Stac
 
     09_Recursion_and_Memoization/
     │
-    ├── 📂 Concepts/ (The Practical Engine)
+    ├── 📂 src/ (The Practical Engine)
     │   └── recursion_and_memoization.py         # Code for recursion trees, stack limits, and DP caching
     │
-    └── 📂 Notes/ (The Blueprint & Documentation)
+    └── 📂 docs/ (The Blueprint & Documentation)
         └── Recursion_and_Memoization.md         # Architectural breakdown of time complexity and the Call Stack
 
 ---
@@ -32,8 +32,8 @@ This module focuses heavily on **Time & Space Complexity (Big O Notation)** and 
 
 ## 🛠️ How to Use This Module
 
-1.  **Analyze the Architecture First:** Open `Recursion_and_Memoization.md` in the `Notes/` folder. The visual graphs mapping `O(2^n)` vs `O(n)` performance are critical for understanding *why* we use Memoization.
-2.  **Run the Engine:** Execute `recursion_and_memoization.py` in the `Concepts/` folder. Test the limits of your CPU by running the non-memoized Fibonacci function, and then witness the extreme speed difference when Memoization is applied.
+1.  **Analyze the Architecture First:** Open `Recursion_and_Memoization.md` in the `docs/` folder. The visual graphs mapping `O(2^n)` vs `O(n)` performance are critical for understanding *why* we use Memoization.
+2.  **Run the Engine:** Execute `recursion_and_memoization.py` in the `src/` folder. Test the limits of your CPU by running the non-memoized Fibonacci function, and then witness the extreme speed difference when Memoization is applied.
 
 ---
 *Engineered for Data Scientists and System Architects focused on algorithmic efficiency and memory safety.*

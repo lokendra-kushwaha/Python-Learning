@@ -10,10 +10,10 @@ This repository focuses on dynamically catching runtime anomalies, hiding sensit
 
     07_Exception_Handling/
     │
-    ├── 📂 Concepts/ (The Practical Engine)
+    ├── 📂 src/ (The Practical Engine)
     │   └── exception_handling.py              # Code for try/except blocks, custom exceptions, and raise
     │
-    └── 📂 Notes/ (The Blueprint & Documentation)
+    └── 📂 docs/ (The Blueprint & Documentation)
         └── Exception_Handling_Architecture.md # Architectural breakdown of system stability and security
 
 ---
@@ -36,8 +36,8 @@ This module moves beyond basic error catching and dives into professional system
 
 ## 🛠️ How to Use This Module
 
-1.  **Read the Architecture First:** Open `Exception_Handling_Architecture.md` in the `Notes/` folder to understand the theory, safety mechanisms, and structural rules.
-2.  **Execute the Engine:** Run `exception_handling.py` in the `Concepts/` folder. The code includes "🧠 EXPLANATIONS" and real-world simulations (like a Bank System and a Google Login simulator) to demonstrate how exceptions dictate program flow.
+1.  **Read the Architecture First:** Open `Exception_Handling_Architecture.md` in the `docs/` folder to understand the theory, safety mechanisms, and structural rules.
+2.  **Execute the Engine:** Run `exception_handling.py` in the `src/` folder. The code includes "🧠 EXPLANATIONS" and real-world simulations (like a Bank System and a Google Login simulator) to demonstrate how exceptions dictate program flow.
 
 ---
 *Engineered for flawless user experience and fortified system security.*

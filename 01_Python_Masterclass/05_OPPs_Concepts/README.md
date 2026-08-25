@@ -10,12 +10,12 @@ Here, we decode *how* CPython handles objects under the hood, how classes intera
 
     05_OPPs_Concepts/
     │
-    ├── 📂 Concepts/ (The Practical Engine)
+    ├── 📂 src/ (The Practical Engine)
     │   ├── 01_classes_and_objects.py                  # Basics, __init__, self, and object lifecycle
     │   ├── 02_encapsulation_and_static_vars.py        # Core state management & security
     │   └── 03_inheritance_polymorphism_abstraction.py # Architecture, MRO, and API Contracts
     │
-    └── 📂 Notes/ (The Blueprint & Documentation)
+    └── 📂 docs/ (The Blueprint & Documentation)
         ├── Classes_Objects_and_Self.md                # Memory blocks, self, & Garbage Collection
         ├── Encapsulation_and_State_Architecture.md    # Name Mangling, Pass-by-Reference
         └── Class_Relationships_and_Abstraction.md     # UML ASCII Diagrams, MRO, Interfaces
@@ -39,8 +39,8 @@ Unlike standard OOP tutorials, this module treats you like a **System Architect*
 
 ## 🛠️ How to Use This Module
 
-1.  **Read the Blueprints First:** Start with the .md files in the Notes/ folder. They contain the ASCII UML diagrams and "Under the Hood" architectural explanations.
-2.  **Run the Engine:** Open the .py scripts in the Concepts/ folder. The code is heavily commented with emojis, highlighting the exact moments where concepts like Method Overriding and Pass-by-Reference take action.
+1.  **Read the Blueprints First:** Start with the .md files in the `docs/` folder. They contain the ASCII UML diagrams and "Under the Hood" architectural explanations.
+2.  **Run the Engine:** Open the .py scripts in the `src/` folder. The code is heavily commented with emojis, highlighting the exact moments where concepts like Method Overriding and Pass-by-Reference take action.
 
 ---
 *Built with ❤️ for those who don't just write code, but engineer systems.*

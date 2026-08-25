@@ -15,4 +15,4 @@ Instead of using complex modulus (`% 10`) and division (`// 10`) operators to ex
 2. A `for` loop iterates through each character of the string.
 3. The characters are converted back to integers on the fly to perform the exponentiation (`int(digit) ** length`).
 
-This approach makes the code much shorter and easier to read while achieving the exact same mathematical result!
+*This approach makes the code much shorter and easier to read while achieving the exact same mathematical result!*

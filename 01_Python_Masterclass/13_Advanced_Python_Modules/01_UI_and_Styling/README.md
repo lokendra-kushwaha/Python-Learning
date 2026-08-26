@@ -16,7 +16,7 @@ Since `rich` is a third-party module, you need to install it via pip before runn
 ## 📂 Directory Structure
 
     13_Advanced_Python_Modules/
-    ├── 01_Rich_Library_Concepts.py    # (Complete Reference Guide for Rich)
+    ├── src/01_rich_library_concepts.py    # (Complete Reference Guide for Rich)
     └── README.md
 
 

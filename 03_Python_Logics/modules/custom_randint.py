@@ -3,8 +3,10 @@ Custom Random Integer Generator
 -------------------------------
 A script that simulates a random integer generator using Python sets.
 """
+import time
+import os
 
-def custom_random_randint(start: int, end: int) -> int:
+def random_randint(start: int, end: int) -> int:
     """
     Generates a pseudo-random integer within a given range using Set popping.
 
@@ -28,27 +30,46 @@ def custom_random_randint(start: int, end: int) -> int:
         
     Raises:
         ValueError: If the start value is greater than the end value or not both of integers.
-    """
-    if not isinstance(start, int):
-        raise ValueError("The starting and end values can only be integers.")
     
-    if not isinstance(end, int):
+    """
+    if not isinstance(start, int) or not isinstance(end, int):
         raise ValueError("The starting and end values can only be integers.")
     
     if start > end:
         raise ValueError("Start value cannot be greater than the end value.")
 
-    
-    # Creating a set of strings to utilize Python's string hash randomization
-    random_set = {str(num) for num in range(start, end + 1)}
-    
-    # Popping an arbitrary element and converting it back to integer
-    return int(random_set.pop())
+    # 1. Creating the Salt: Generating a unique identifier for every process.
+    # We are combining the Process ID (PID) and the current time.
+    salt = f"{os.getpid()}_{time.time()}"
 
+    # ---------------------------------------------------------
+    # ❌ The Old Method - Why it failed in multiprocessing:
+    # When 100 processes ran simultaneously, all of them had the exact same 
+    # strings (like "5", "6"). Python's hashing algorithm placed these identical 
+    # strings in the exact same memory positions across all isolated processes.
+    # Therefore, pop() threw out the exact same number 100 times.
+    #
+    # random_set = {str(num) for num in range(start, end + 1)}
+    # return int(random_set.pop())
+    # ---------------------------------------------------------
+
+    # ✅ The New Method - Using Salting
+    # Here, we attach our unique salt to the end of the number (e.g., "5***1234_17000.55").
+    # This makes the string completely unique for every single process, forcing 
+    # Python's hashing engine to shuffle them into random, unpredictable positions.
+    random_set = {f"{num}***{salt}" for num in range(start, end + 1)}
+    
+    # Extracting an arbitrary element from the set
+    popped_item = random_set.pop()
+
+    # Splitting the string to remove the salt (garbage data) and retrieving the original number
+    original_num = popped_item.split("***")[0]
+    
+    return int(original_num)
 
 if __name__ == "__main__":
     start_val = 4
     end_val = 20
     
-    result = custom_random_randint(start_val, end_val)
+    result = random_randint(start_val, end_val)
     print(f"Custom random number between {start_val} and {end_val}: {result}")

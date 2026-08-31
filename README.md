@@ -8,10 +8,10 @@ I wrote my first line of Python on **June 25, 2026**! 🚀 This repository is co
 
 My workspace is divided into dynamic categories to keep my growth organized:
 
-*   **`01_Concepts_and_Notes`**
+*   **`01_Python_Masterclass`**
     The foundation. This folder contains the code, notes, and experiments I write while learning core Python concepts and new syntax.
     
-*   **`02_Code_Practice`**
+*   **`02_Core_Implementations`**
     Practice makes perfect. A collection of daily scripts, exercises, and challenges I solve to sharpen my logic and problem-solving skills.
     
 *   **`03_Python_Logics`**

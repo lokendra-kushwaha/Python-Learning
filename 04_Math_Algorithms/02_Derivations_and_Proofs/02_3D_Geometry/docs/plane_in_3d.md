@@ -32,7 +32,7 @@ Every concept is derived from first principles. The derivations prioritize **Vec
 * The magnitude is $|\vec{ON}| = d$.
 * Since $\vec{ON}$ is parallel to the unit normal vector $\hat{n}$ ($\vec{ON} \parallel \hat{n}$), it is defined as:
 
-  $$ \vec{ON} = d\hat{n} $$
+$$ \vec{ON} = d\hat{n} $$
 
 ### 3. Triangle Law of Vector Addition
 In $\Delta ONR$, applying the triangle law of vector addition:
@@ -196,7 +196,13 @@ Substitute these components into the scalar triple product $(\vec{r} - \vec{a}) 
 
 > **Cartesian Equation:**
 >
-> $$ \begin{vmatrix} x - x_1 & y - y_1 & z - z_1 \\ x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\ x_3 - x_1 & y_3 - y_1 & z_3 - z_1 \end{vmatrix} = 0 $$-
+> $$ 
+> \begin{vmatrix} 
+> x - x_1 & y - y_1 & z - z_1 \\ 
+> x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\ 
+> x_3 - x_1 & y_3 - y_1 & z_3 - z_1 
+> \end{vmatrix} = 0 
+> $$
 
 ---
 
@@ -206,9 +212,9 @@ Substitute these components into the scalar triple product $(\vec{r} - \vec{a}) 
   <img src="./assets/planes/plane-intercept-form.jpg" alt="Intercept form of the equation of a plane diagram" width="80%">
 </div>
 
-* **$a$**: $x$-intercept (Point $A$ is $(a, 0, 0)$)
-* **$b$**: $y$-intercept (Point $B$ is $(0, b, 0)$)
-* **$c$**: $z$-intercept (Point $C$ is $(0, 0, c)$)
+* **a**: $x$-intercept (Point $A$ is $(a, 0, 0)$)
+* **b**: $y$-intercept (Point $B$ is $(0, b, 0)$)
+* **c**: $z$-intercept (Point $C$ is $(0, 0, c)$)
 
 Let the general equation of the plane be:
 
@@ -333,9 +339,15 @@ $$ \vec{a}_2 - \vec{a}_1 = (x_2 - x_1)\hat{i} + (y_2 - y_1)\hat{j} + (z_2 - z_1)
 
 The vector equation is a scalar triple product of the vectors $(\vec{a}_2 - \vec{a}_1)$, $\vec{b}_1$, and $\vec{b}_2$. We can represent this scalar triple product directly as a determinant set to zero:
 
-> **Cartesian Form:**
+> **Cartesian Equation:**
 >
-> $$ \begin{vmatrix} x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\ a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \end{vmatrix} = 0 $$
+> $$ 
+> \begin{vmatrix} 
+> x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\ 
+> a_1 & b_1 & c_1 \\ 
+> a_2 & b_2 & c_2 
+> \end{vmatrix} = 0 
+> $$
 
 ---
 
@@ -393,7 +405,7 @@ $$ \implies \frac{\vec{r} \cdot \vec{n}}{|\vec{n}|} = \frac{d}{|\vec{n}|} $$
 
 $$ \implies \vec{r} \cdot \hat{n} = \frac{d}{|\vec{n}|} $$
 
-*Here, $\frac{d}{|\vec{n}|}$ is the distance of the $\pi_1$ plane from the origin (distance $OB$).*
+*Here,* $\frac{d}{|\vec{n}|}$ *is the distance of the* $\pi_1$ *plane from the origin (distance* $OB$*).*
 
 The unit vector perpendicular to both $\pi_1$ and $\pi_2$ is $\hat{n}$.
 
@@ -410,7 +422,7 @@ $$ \implies \frac{\vec{r} \cdot \vec{n}}{|\vec{n}|} = \frac{\vec{a} \cdot \vec{n
 
 $$ \implies \vec{r} \cdot \hat{n} = \frac{\vec{a} \cdot \vec{n}}{|\vec{n}|} $$
 
-*Here, $\frac{\vec{a} \cdot \vec{n}}{|\vec{n}|}$ is the distance of the $\pi_2$ plane from the origin (distance $OA$).*
+*Here,* $\frac{\vec{a} \cdot \vec{n}}{|\vec{n}|}$ *is the distance of the* $\pi_2$ *plane from the origin (distance* $OA$*).*
 
 **Calculating Distance $PQ$:**
 The perpendicular distance from point $P$ to plane $\pi_1$ is $PQ$. Based on the projection on the normal vector:
@@ -489,42 +501,42 @@ $$ \sin\theta = \left| \frac{\vec{n} \cdot \vec{b}}{|\vec{n}| |\vec{b}|} \right|
 ### Step 1: Identify the Vectors
 * From the plane's equation $2x - 3y + 4z - 6 = 0$, the normal vector is extracted as:
 
-  $$ \vec{n} = 2\hat{i} - 3\hat{j} + 4\hat{k} $$
+$$ \vec{n} = 2\hat{i} - 3\hat{j} + 4\hat{k} $$
 
 * Let the foot of the perpendicular on the plane be $P(x_1, y_1, z_1)$ and the origin be $A(0,0,0)$.
 * The vector representing the perpendicular line from the origin is:
 
-  $$ \vec{AP} = x_1\hat{i} + y_1\hat{j} + z_1\hat{k} $$
+$$ \vec{AP} = x_1\hat{i} + y_1\hat{j} + z_1\hat{k} $$
 
 ### Step 2: Apply the Condition for Parallel Vectors
 * Because the line $\vec{AP}$ is perpendicular to the plane, it will be parallel to the plane's normal vector $\vec{n}$ ($\vec{AP} \parallel \vec{n}$).
 * For parallel vectors, their direction ratios must be proportional:
 
-  $$ \frac{x_1}{2} = \frac{y_1}{-3} = \frac{z_1}{4} $$
+$$ \frac{x_1}{2} = \frac{y_1}{-3} = \frac{z_1}{4} $$
 
 ### Step 3: Define a General Point Using a Constant ($\lambda$)
 * By equating these proportional ratios to a constant $\lambda$, we get:
 
-  $$ x_1 = 2\lambda, \quad y_1 = -3\lambda, \quad z_1 = 4\lambda $$
+$$ x_1 = 2\lambda, \quad y_1 = -3\lambda, \quad z_1 = 4\lambda $$
 
 * This establishes the general coordinates for Point $P$ as:
 
-  $$ (2\lambda, -3\lambda, 4\lambda) $$
+$$ (2\lambda, -3\lambda, 4\lambda) $$
 
 ### Step 4: Satisfy the Plane's Equation
 * Since Point $P$ lies directly on the plane, its coordinates must satisfy the equation of the plane.
 * Substituting the general coordinates into the plane's equation:
 
-  $$ 2(2\lambda) - 3(-3\lambda) + 4(4\lambda) = 6 $$
+$$ 2(2\lambda) - 3(-3\lambda) + 4(4\lambda) = 6 $$
 
 * Solving for $\lambda$:
 
-  $$ 4\lambda + 9\lambda + 16\lambda = 6 \implies 29\lambda = 6 \implies \lambda = \frac{6}{29} $$
+$$ 4\lambda + 9\lambda + 16\lambda = 6 \implies 29\lambda = 6 \implies \lambda = \frac{6}{29} $$
 
 ### Step 5: Calculate the Final Coordinates
 * Substitute the calculated value of $\lambda$ back into the general coordinates of Point $P$ to find the exact location:
 
-  $$ P \left( \frac{12}{29}, -\frac{18}{29}, \frac{24}{29} \right) $$
+$$ P \left( \frac{12}{29}, -\frac{18}{29}, \frac{24}{29} \right) $$
 
 ---
 
@@ -754,19 +766,19 @@ We drop a perpendicular from point $\vec{a}$ to the plane.
 
 1. The equation of this vertical drop line is:
 
-   $$ \vec{r} = \vec{a} + t\vec{n} $$
+$$ \vec{r} = \vec{a} + t\vec{n} $$
 
 2. Since the foot of this perpendicular ($\vec{a}'$) lies on the plane, it must satisfy the plane's equation:
 
-   $$ (\vec{a} + t\vec{n}) \cdot \vec{n} = d $$
+$$ (\vec{a} + t\vec{n}) \cdot \vec{n} = d $$
 
-   $$ \implies \vec{a} \cdot \vec{n} + t(\vec{n} \cdot \vec{n}) = d $$
+$$ \implies \vec{a} \cdot \vec{n} + t(\vec{n} \cdot \vec{n}) = d $$
 
-   $$ \implies \vec{a} \cdot \vec{n} + t|\vec{n}|^2 = d $$
+$$ \implies \vec{a} \cdot \vec{n} + t|\vec{n}|^2 = d $$
 
-   $$ \implies t|\vec{n}|^2 = d - \vec{a} \cdot \vec{n} $$
+$$ \implies t|\vec{n}|^2 = d - \vec{a} \cdot \vec{n} $$
 
-   $$ \implies t = \frac{d - (\vec{a} \cdot \vec{n})}{|\vec{n}|^2} $$
+$$ \implies t = \frac{d - (\vec{a} \cdot \vec{n})}{|\vec{n}|^2} $$
 
 Substitute $t$ back into the drop line equation to get Point $\vec{a}'$:
 
@@ -777,11 +789,11 @@ The original direction $\vec{b}$ consists of a horizontal part (along the plane)
 
 1. The vertical part is the vector projection of $\vec{b}$ onto $\vec{n}$:
 
-   $$ \text{Vertical Part} = \left( \frac{\vec{b} \cdot \vec{n}}{|\vec{n}|^2} \right)\vec{n} $$
+$$ \text{Vertical Part} = \left( \frac{\vec{b} \cdot \vec{n}}{|\vec{n}|^2} \right)\vec{n} $$
 
 2. Subtract the vertical part from the total direction $\vec{b}$ to get the horizontal Direction $\vec{v}$:
 
-   $$ \vec{v} = \vec{b} - \left( \frac{\vec{b} \cdot \vec{n}}{|\vec{n}|^2} \right)\vec{n} $$
+$$ \vec{v} = \vec{b} - \left( \frac{\vec{b} \cdot \vec{n}}{|\vec{n}|^2} \right)\vec{n} $$
 
 ### Step 3: Write the final Equation
 Combine the new point and new direction.
@@ -905,7 +917,7 @@ $$ \vec{a}' = \vec{a} + \frac{2(d - \vec{a} \cdot \vec{n})}{|\vec{n}|^2}\vec{n} 
 ### Step 2: Find the Reflected Direction ($\vec{v}$)
 When a vector $\vec{b}$ is reflected across a normal $\vec{n}$, its component parallel to the plane remains the same, but its component along the normal is inverted.
 * The component of $\vec{b}$ along the normal $\vec{n}$ is: $\vec{b}_{\parallel} = \left( \frac{\vec{b} \cdot \vec{n}}{|\vec{n}|^2} \right)\vec{n}$
-* The component of $\vec{b}$ along the plane is: $\vec{b}_{\perp} = \vec{b} - \vec{b}_{\parallel}$
+* The component of $\vec{b}$ along the plane is: $\vec{b}_{ \perp } = \vec{b} - \vec{b}_{ \parallel }$
 
 The reflected direction vector $\vec{v}$ will have the same plane component but the negative normal component:
 

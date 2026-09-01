@@ -212,9 +212,9 @@ Substitute these components into the scalar triple product $(\vec{r} - \vec{a}) 
   <img src="./assets/planes/plane-intercept-form.jpg" alt="Intercept form of the equation of a plane diagram" width="80%">
 </div>
 
-* **a**: $x$-intercept (Point $A$ is $(a, 0, 0)$)
-* **b**: $y$-intercept (Point $B$ is $(0, b, 0)$)
-* **c**: $z$-intercept (Point $C$ is $(0, 0, c)$)
+* a: $x$-intercept, Point $A(a, 0, 0)$
+* b: $y$-intercept, Point $B(0, b, 0)$
+* c: $z$-intercept, Point $C(0, 0, c)$
 
 Let the general equation of the plane be:
 
@@ -486,7 +486,7 @@ $$ \sin\theta = \left| \frac{\vec{n} \cdot \vec{b}}{|\vec{n}| |\vec{b}|} \right|
 
 ---
 
-## Algorithm: Foot of the Perpendicular
+## 10. Algorithm: Foot of the Perpendicular
 
 <div align="center">
   <img src="./assets/planes/foot-of-perpendicular.jpg" alt="Foot of the perpendicular diagram" width="80%">
@@ -540,7 +540,7 @@ $$ P \left( \frac{12}{29}, -\frac{18}{29}, \frac{24}{29} \right) $$
 
 ---
 
-## 10. Line Through the Intersection of Two Planes
+## 11. Line Through the Intersection of Two Planes
 
 <div align="center">
   <img src="./assets/planes/line-intersecting-planes.jpg" alt="Line through the intersection of two planes diagram" width="80%">
@@ -611,7 +611,7 @@ Substituting $\vec{a}$ and $\vec{b}$ in the vector equation of the line ($\vec{r
 
 ---
 
-## 11. Point of Intersection of a Plane and a Line
+## 12. Point of Intersection of a Plane and a Line
 
 <div align="center">
   <img src="./assets/planes/intersection-point-line-plane.jpg" alt="Point of intersection of a plane and a line diagram" width="80%">
@@ -641,7 +641,7 @@ On putting the value of $\lambda$ in the equation of the line:
 
 ---
 
-## 12. The Distance from One Plane to Another
+## 13. The Distance from One Plane to Another
 
 <div align="center">
   <img src="./assets/planes/distance-parallel-planes.jpg" alt="Distance from one plane to another diagram" width="80%">
@@ -673,7 +673,7 @@ $$ OB - OA = PQ = \frac{d_2}{|\vec{n}_2|} - \frac{d_1}{|\vec{n}_1|} $$
 
 ---
 
-## 13. Angle Between the Line and the Plane (Vector Form)
+## 14. Angle Between the Line and the Plane (Vector Form)
 
 <div align="center">
   <img src="./assets/planes/angle-line-plane-2.jpg" alt="Angle between the line and the plane diagram" width="80%">
@@ -701,7 +701,7 @@ Taking the absolute value to ensure we get the acute angle:
 
 ---
 
-## 14. Angle Bisector Plane
+## 15. Angle Bisector Plane
 
 <div align="center">
   <img src="./assets/planes/angle-bisector-plane.jpg" alt="Angle bisector plane diagram" width="80%">
@@ -751,7 +751,7 @@ $$ \implies \vec{a} \cdot \hat{n}_1 + \vec{a} \cdot \hat{n}_2 = d_1 + d_2 $$
 
 ---
 
-## 15. Projection of a Line on a Plane
+## 16. Projection of a Line on a Plane
 
 <div align="center">
   <img src="./assets/planes/projection-line-plane.jpg" alt="Projection of a line on a plane diagram" width="80%">
@@ -804,7 +804,7 @@ Combine the new point and new direction.
 
 ---
 
-## 16. Image (Reflection) of a Point in a Plane
+## 17. Image (Reflection) of a Point in a Plane
 
 <div align="center">
   <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Image of a point in a plane diagram" width="80%">
@@ -855,7 +855,7 @@ Substitute $\lambda$ back into equation (1) to get the position vector of the im
 
 ---
 
-## 17. Distance of a Point from a Plane (Measured Parallel to a Line)
+## 18. Distance of a Point from a Plane (Measured Parallel to a Line)
 
 <div align="center">
   <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Distance measured parallel to a line diagram" width="80%">
@@ -897,7 +897,7 @@ Substitute the value of $\lambda$:
 
 ---
 
-## 18. Image (Reflection) of a Line in a Plane
+## 19. Image (Reflection) of a Line in a Plane
 
 <div align="center">
   <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Reflection of a line in a plane diagram" width="80%">
@@ -917,7 +917,7 @@ $$ \vec{a}' = \vec{a} + \frac{2(d - \vec{a} \cdot \vec{n})}{|\vec{n}|^2}\vec{n} 
 ### Step 2: Find the Reflected Direction ($\vec{v}$)
 When a vector $\vec{b}$ is reflected across a normal $\vec{n}$, its component parallel to the plane remains the same, but its component along the normal is inverted.
 * The component of $\vec{b}$ along the normal $\vec{n}$ is: $\vec{b}_{\parallel} = \left( \frac{\vec{b} \cdot \vec{n}}{|\vec{n}|^2} \right)\vec{n}$
-* The component of $\vec{b}$ along the plane is: $\vec{b}_{ \perp } = \vec{b} - \vec{b}_{ \parallel }$
+* The component of $\vec{b}$ along the plane is: $\vec{b}\_{\perp} = \vec{b} - \vec{b}\_{\parallel}$
 
 The reflected direction vector $\vec{v}$ will have the same plane component but the negative normal component:
 

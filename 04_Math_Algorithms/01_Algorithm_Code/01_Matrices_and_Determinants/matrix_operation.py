@@ -10,7 +10,7 @@ class Matrix:
         matrix (list): A 2D list containing the actual mathematical data of the matrix.
     """
 
-    def __init__(self, n, m, data=None):
+    def __init__(self, row, col, data=None):
         """
         Initializes the Matrix object.
         
@@ -22,10 +22,30 @@ class Matrix:
             m (int): The number of rows.
             data (list, optional): A predefined 2D list to initialize the matrix. Defaults to None.
         """
-        self.col = n
-        self.row = m
+        self.row = row
+        self.col = col
+        
         if data is not None:
-            self.matrix = data
+            if not isinstance(data, list):
+                raise TypeError("Error")
+
+            if len(data) > 0 and isinstance(data[0], list):
+                if len(data) != self.row or any(len(r) != self.col for r in data):
+                    raise ValueError('error')
+                self.matrix = data
+
+            else:
+                if (len(data) % self.row != 0) or (self.row * self.col != len(data)):
+                                raise ValueError('Error')
+
+                matrix = []
+                i = 0
+                while i < self.row:
+                    split = data[i*self.col : self.col + self.col*i]
+                    matrix.append(split)
+                    i = i + 1
+                    
+                self.matrix = matrix
 
         else:
             self.matrix = [[randint(-10, 10) for i in range(self.col)] for i in range(self.row)]
@@ -43,6 +63,88 @@ class Matrix:
         matrix += '-'*10
         return matrix
 
+    def __add__(self, other):
+        """
+        Performs matrix addition. 
+        Both matrices must have the exact same dimensions (order).
+
+        Args:
+            other (Matrix): The matrix to be added to the current matrix.
+
+        Returns:
+            Matrix or str: A new Matrix object containing the sum, or an error message if dimensions do not match.
+        """
+        if self.col != other.col or self.row != other.row:
+            return "Order must be the same!."
+
+        sum_matrices = []
+        for i in range(self.row):
+            new_row = []
+            for j in range(self.col):
+                sum_val = self.matrix[i][j] + other.matrix[i][j]
+                new_row.append(sum_val)
+        
+            sum_matrices.append(new_row)
+
+        return Matrix(self.row, self.col, data=sum_matrices)
+
+    def __sub__(self, other):
+        """
+        Performs matrix subtraction.
+        Both matrices must have the exact same dimensions (order).
+
+        Args:
+            other (Matrix): The matrix to be subtracted from the current matrix.
+
+        Returns:
+            Matrix or str: A new Matrix object containing the difference, or an error message if dimensions do not match.
+        """
+        if self.col != other.col or self.row != other.row:
+            return "Order must be the same!."
+
+        sub_matrices = []
+        for i in range(self.row):
+            new_row = []
+            for j in range(self.col):
+                sub_val = self.matrix[i][j] - other.matrix[i][j]
+                new_row.append(sub_val)
+        
+            sub_matrices.append(new_row)
+
+        return Matrix(self.row, self.col, data=sub_matrices)
+
+    def __mul__(self, other):
+
+        if self.col != other.col or self.row != other.row:
+            return "Order must be the same!."
+
+        mul_matrices = []
+        for i in range(self.row):
+            new_row = []
+            for j in range(self.col):
+                sum_val = self.matrix[i][j] * other.matrix[i][j]
+                new_row.append(sum_val)
+        
+            mul_matrices.append(new_row)
+
+        return Matrix(self.row, self.col, data=mul_matrices)
+
+    def __truediv__(self, other):
+
+        if self.col != other.col or self.row != other.row:
+            return "Order must be the same!."
+
+        div_matrices = []
+        for i in range(self.row):
+            new_row = []
+            for j in range(self.col):
+                sum_val = self.matrix[i][j] / other.matrix[i][j]
+                new_row.append(sum_val)
+        
+            div_matrices.append(new_row)
+
+        return Matrix(self.row, self.col, data=div_matrices)
+    
     def add(self, other):
         """
         Performs matrix addition. 
@@ -66,7 +168,7 @@ class Matrix:
         
             sum_matrices.append(new_row)
 
-        return Matrix(self.col, self.row, data=sum_matrices)
+        return Matrix(self.row, self.col, data=sum_matrices)
     
     def sub(self, other):
         """
@@ -91,7 +193,7 @@ class Matrix:
         
             sub_matrices.append(new_row)
 
-        return Matrix(self.col, self.row, data=sub_matrices)
+        return Matrix(self.row, self.col, data=sub_matrices)
     
     def multiply(self, other):
         """
@@ -120,7 +222,7 @@ class Matrix:
 
             result_matrix.append(new_row)
 
-        return Matrix(other.col, self.row, data=result_matrix)
+        return Matrix(self.row, other.col, data=result_matrix)
     
     def scalorMultiply(self, integer):
         """
@@ -142,7 +244,7 @@ class Matrix:
 
             new_matrix.append(new_row)
 
-        return Matrix(self.col, self.row, data=new_matrix)
+        return Matrix(self.row, self.col, data=new_matrix)
     
     def transpose(self):
         """
@@ -159,7 +261,7 @@ class Matrix:
 
             transposed_matrix.append(new_row)
 
-        return Matrix(self.row, self.col, data=transposed_matrix)
+        return Matrix(self.col, self.row, data=transposed_matrix)
     
     def isSymmetric(self):
         """
@@ -216,3 +318,8 @@ if __name__ == "__main__":
 
     m3 = Matrix(2, 2)
     m3.isSkewSymmetric()
+
+    print(m1 - m2)
+    print(m1 + m2)
+    print(m1 * m2)
+    print(m1 / m2)

@@ -8,7 +8,6 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Linking the external '03_Python_Logics' folder to import custom_randint
 logic_dir = os.path.abspath(os.path.join(current_dir, "../../../..", "03_Python_Logics", "built_in_functions"))
-print(f"Logic Directory Linked: {logic_dir}\n")
 sys.path.append(logic_dir)
 
 import custom_sum, custom_sorted, custom_len, custom_max # type: ignore
@@ -29,7 +28,7 @@ def mean(vector):
     Calculates the arithmetic mean (average) of a dataset.
     
     Mathematical Formula:
-        $\mu = \frac{1}{N} \sum_{i=1}^{N} x_i$
+        $\\mu = \frac{1}{N} \\sum_{i=1}^{N} x_i$
         Where $N$ is the total number of elements, and $x_i$ represents each value.
 
     Args:

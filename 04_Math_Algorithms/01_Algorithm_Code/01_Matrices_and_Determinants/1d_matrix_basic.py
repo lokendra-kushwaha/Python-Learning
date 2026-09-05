@@ -47,7 +47,7 @@ class Matrix:
             matrix_view += '[' + ' '.join(row) + "]\n"
         return matrix_view
     
-    def addition(self, other):
+    def __add__(self, other):
         """
         Adds two matrices using flat 1D list iteration.
 
@@ -67,7 +67,7 @@ class Matrix:
         else:
             return 'To add the two matrices above, their order must be the same.'
         
-    def substract(self, other):
+    def __sub__(self, other):
         """
         Subtracts another matrix from the current matrix using flat 1D list iteration.
 
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     print(m2)
 
     print("Addition of Metrices -")
-    print(m1.addition(m2))
+    print(m1 + m2)
 
     print("Substraction of Metrices -")
-    print(m1.substract(m2))
+    print(m1 - m2)
